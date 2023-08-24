@@ -88,9 +88,12 @@
 				{
 					"name": "Summon Air Elemental",
 					"entries": [
-						"Five aarakocra within 30 feet of each other can magically summon an air elemental. Each of the five must use its action and movement on three consecutive turns to perform an aerial dance and must maintain concentration while doing so (as if concentrating on a spell). When all five have finished their third turn of the dance, the elemental appears in an unoccupied space within 60 feet of them. It is friendly toward them and obeys their spoken commands. It remains for 1 hour, until it or all its summoners die, or until any of its summoners dismisses it as a bonus action. A summoner can't perform the dance again until it finishes a short rest. When the elemental returns to the Elemental Plane of Air, any aarakocra within 5 feet of it can return with it."
+						"Five aarakocra within 30 feet of each other can magically summon an air elemental. Each of the five must use its action and movement on three consecutive turns to perform an aerial dance and must maintain {@status concentration} while doing so (as if {@status concentration||concentrating} on a spell). When all five have finished their third turn of the dance, the elemental appears in an unoccupied space within 60 feet of them. It is friendly toward them and obeys their spoken commands. It remains for 1 hour, until it or all its summoners die, or until any of its summoners dismisses it as a bonus action. A summoner can't perform the dance again until it finishes a short rest. When the elemental returns to the Elemental Plane of Air, any aarakocra within 5 feet of it can return with it."
 					]
 				}
+			],
+			"attachedItems": [
+				"javelin|phb"
 			],
 			"languageTags": [
 				"AU",
@@ -110,6 +113,7 @@
 		{
 			"name": "Alastrah",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 197,
 			"_copy": {
@@ -132,6 +136,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"club|phb"
+			],
 			"languageTags": [
 				"GI"
 			],
@@ -140,6 +147,7 @@
 		{
 			"name": "Augrek Brighthelm",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 247,
 			"size": [
@@ -148,7 +156,10 @@
 			"type": {
 				"type": "humanoid",
 				"tags": [
-					"shield dwarf"
+					{
+						"tag": "dwarf",
+						"prefix": "Shield"
+					}
 				]
 			},
 			"alignment": [
@@ -223,6 +234,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"heavy crossbow|phb",
+				"warhammer|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -251,7 +266,7 @@
 				"name": "Veteran",
 				"source": "MM",
 				"_trait": {
-					"name": "Mountain Dwarf",
+					"name": "Shield Dwarf",
 					"source": "PHB"
 				},
 				"_mod": {
@@ -329,6 +344,7 @@
 		{
 			"name": "Beldora",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 249,
 			"size": [
@@ -410,6 +426,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"hand crossbow|phb",
+				"shortsword|phb"
+			],
 			"languageTags": [
 				"C",
 				"D",
@@ -432,6 +452,7 @@
 		{
 			"name": "Braxow",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 207,
 			"_copy": {
@@ -443,6 +464,7 @@
 		{
 			"name": "Chief Guh",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 140,
 			"size": [
@@ -510,6 +532,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"greatclub|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -533,6 +558,7 @@
 		{
 			"name": "Chief Kartha-Kaya",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 173,
 			"_copy": {
@@ -584,6 +610,7 @@
 		{
 			"name": "Cinderhild",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 182,
 			"_copy": {
@@ -680,6 +707,10 @@
 			"spellcastingTags": [
 				"O"
 			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"strength"
+			],
 			"hasToken": true
 		},
 		{
@@ -719,6 +750,7 @@
 		{
 			"name": "Cog",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 209,
 			"_copy": {
@@ -738,6 +770,7 @@
 		{
 			"name": "Count Thullen",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 198,
 			"_copy": {
@@ -853,6 +886,7 @@
 		{
 			"name": "Countess Sansuri",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 192,
 			"size": [
@@ -976,7 +1010,7 @@
 				{
 					"name": "Wind Aura",
 					"entries": [
-						"A magical aura of wind surrounds Sansuri. The aura is a 10-foot-radius sphere that lasts as long as Sansuri maintains concentration on it (as if concentrating on a spell). While the aura is in effect, Sansuri gains a +2 bonus to its AC against ranged weapon attacks, and all open flames within the aura are extinguished unless they are magical."
+						"A magical aura of wind surrounds Sansuri. The aura is a 10-foot-radius sphere that lasts as long as Sansuri maintains {@status concentration} on it (as if {@status concentration||concentrating} on a spell). While the aura is in effect, Sansuri gains a +2 bonus to its AC against ranged weapon attacks, and all open flames within the aura are extinguished unless they are magical."
 					]
 				},
 				{
@@ -997,6 +1031,9 @@
 						"{@atk rw} {@hit 12} to hit, range 60/240 ft., one target. {@h}30 ({@damage 4d10 + 8}) bludgeoning damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"morningstar|phb"
 			],
 			"traitTags": [
 				"Keen Senses"
@@ -1036,6 +1073,14 @@
 				"charmed",
 				"incapacitated",
 				"invisible"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"strength",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1140,6 +1185,7 @@
 		{
 			"name": "Cressaro",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 193,
 			"_copy": {
@@ -1171,11 +1217,13 @@
 				"source": "MM"
 			},
 			"damageTagsLegendary": [],
+			"conditionInflictLegendary": [],
 			"hasToken": true
 		},
 		{
 			"name": "Darathra Shendrel",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 253,
 			"size": [
@@ -1263,6 +1311,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"greatsword|phb",
+				"heavy crossbow|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1285,6 +1337,7 @@
 		{
 			"name": "Darz Helgar",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 253,
 			"size": [
@@ -1357,6 +1410,10 @@
 						"{@atk rw} {@hit 4} to hit, range 30/120 ft., one target. {@h}4 ({@damage 1d4 + 2}) piercing damage. Darz carries twenty sling stones."
 					]
 				}
+			],
+			"attachedItems": [
+				"shortsword|phb",
+				"sling|phb"
 			],
 			"traitTags": [
 				"Sneak Attack"
@@ -1433,6 +1490,7 @@
 		{
 			"name": "Duchess Brimskarda",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 185,
 			"_copy": {
@@ -1484,6 +1542,7 @@
 		{
 			"name": "Duke Zalto",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 184,
 			"size": [
@@ -1577,6 +1636,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"maul|phb"
+			],
 			"traitTags": [
 				"Siege Monster"
 			],
@@ -1599,6 +1661,9 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"savingThrowForced": [
+				"strength"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -1606,6 +1671,7 @@
 		{
 			"name": "Duvessa Shane",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 248,
 			"size": [
@@ -1679,6 +1745,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"actionTags": [
 				"Parry"
 			],
@@ -1703,6 +1772,7 @@
 		{
 			"name": "Eigeron's Ghost",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 129,
 			"_copy": {
@@ -1765,6 +1835,7 @@
 		{
 			"name": "Elister",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 154,
 			"_copy": {
@@ -1830,6 +1901,10 @@
 				"O",
 				"R"
 			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
+			],
 			"hasToken": true
 		},
 		{
@@ -1840,7 +1915,7 @@
 				"name": "Guard",
 				"source": "MM",
 				"_trait": {
-					"name": "Mountain Dwarf",
+					"name": "Shield Dwarf",
 					"source": "PHB"
 				}
 			},
@@ -1882,6 +1957,7 @@
 		{
 			"name": "Ghelryn Foehammer",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 255,
 			"size": [
@@ -1892,7 +1968,7 @@
 				"tags": [
 					{
 						"tag": "dwarf",
-						"prefix": "shield"
+						"prefix": "Shield"
 					}
 				]
 			},
@@ -1975,6 +2051,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"battleaxe|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -2015,6 +2094,7 @@
 		{
 			"name": "Great Chief Halric Bonesnapper",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 89,
 			"_copy": {
@@ -2055,6 +2135,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"+1 greataxe|dmg"
+			],
 			"languageTags": [
 				"C",
 				"OTH"
@@ -2064,6 +2147,7 @@
 		{
 			"name": "Harshnag",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 120,
 			"size": [
@@ -2147,6 +2231,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"gurt's greataxe|skt"
+			],
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -2176,6 +2263,7 @@
 		{
 			"name": "Hellenhild",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 207,
 			"_copy": {
@@ -2295,6 +2383,7 @@
 		{
 			"name": "Hydia Moonmusk",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 148,
 			"_copy": {
@@ -2406,6 +2495,7 @@
 		{
 			"name": "Imperator Uthor",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 209,
 			"_copy": {
@@ -2684,12 +2774,25 @@
 				"prone",
 				"restrained"
 			],
+			"savingThrowForced": [
+				"dexterity",
+				"wisdom"
+			],
+			"savingThrowForcedLegendary": [
+				"constitution",
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity"
+			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Jarl Storvald",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 165,
 			"size": [
@@ -2785,6 +2888,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"greataxe|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -2816,13 +2922,14 @@
 		{
 			"name": "Jasper Dimmerchasm",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 184,
 			"_copy": {
 				"name": "Veteran",
 				"source": "MM",
 				"_trait": {
-					"name": "Mountain Dwarf",
+					"name": "Shield Dwarf",
 					"source": "PHB"
 				},
 				"_mod": {
@@ -2885,6 +2992,7 @@
 		{
 			"name": "Kaaltar",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 197,
 			"_copy": {
@@ -2907,6 +3015,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"club|phb"
+			],
 			"languageTags": [
 				"GI"
 			],
@@ -2915,6 +3026,7 @@
 		{
 			"name": "Kella Darkhope",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 25,
 			"_copy": {
@@ -2944,6 +3056,7 @@
 		{
 			"name": "Khaspere Drylund",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 216,
 			"_copy": {
@@ -2980,11 +3093,13 @@
 				"C",
 				"E"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "King Hekaton",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 222,
 			"size": [
@@ -3130,8 +3245,17 @@
 			"conditionInflict": [
 				"deafened"
 			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity"
+			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Klauth",
@@ -3371,6 +3495,20 @@
 				"petrified",
 				"restrained"
 			],
+			"savingThrowForced": [
+				"dexterity",
+				"wisdom"
+			],
+			"savingThrowForcedLegendary": [
+				"constitution",
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"dexterity",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -3382,7 +3520,7 @@
 				"name": "Knight",
 				"source": "MM",
 				"_trait": {
-					"name": "Mountain Dwarf",
+					"name": "Shield Dwarf",
 					"source": "PHB"
 				},
 				"_mod": {
@@ -3439,6 +3577,7 @@
 		{
 			"name": "Lifferlas",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 250,
 			"size": [
@@ -3703,12 +3842,16 @@
 				"MW",
 				"RCH"
 			],
+			"savingThrowForcedSpell": [
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Markham Southwell",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 248,
 			"size": [
@@ -3787,6 +3930,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"heavy crossbow|phb",
+				"longsword|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3809,6 +3956,7 @@
 		{
 			"name": "Miros Xelbrin",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 251,
 			"size": [
@@ -3882,6 +4030,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"club|phb",
+				"heavy crossbow|phb"
+			],
 			"languageTags": [
 				"C"
 			],
@@ -3901,6 +4053,7 @@
 		{
 			"name": "Mirran",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 207,
 			"_copy": {
@@ -3940,13 +4093,14 @@
 		{
 			"name": "Morak Ur'gray",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 31,
 			"_copy": {
 				"name": "Commoner",
 				"source": "MM",
 				"_trait": {
-					"name": "Mountain Dwarf",
+					"name": "Shield Dwarf",
 					"source": "PHB"
 				}
 			},
@@ -3967,13 +4121,14 @@
 		{
 			"name": "Narbeck Horn",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 114,
 			"_copy": {
 				"name": "Knight",
 				"source": "MM",
 				"_trait": {
-					"name": "Mountain Dwarf",
+					"name": "Shield Dwarf",
 					"source": "PHB"
 				},
 				"_mod": {
@@ -4011,6 +4166,7 @@
 		{
 			"name": "Narth Tezrin",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 254,
 			"size": [
@@ -4087,6 +4243,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"hand crossbow|phb",
+				"shortsword|phb"
+			],
 			"languageTags": [
 				"C",
 				"D"
@@ -4106,6 +4266,7 @@
 		{
 			"name": "Naxene Drathkala",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 252,
 			"size": [
@@ -4216,6 +4377,10 @@
 			"miscTags": [
 				"MW"
 			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -4223,6 +4388,7 @@
 		{
 			"name": "Nimir",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 256,
 			"_copy": {
@@ -4287,11 +4453,16 @@
 			"spellcastingTags": [
 				"O"
 			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity"
+			],
 			"hasToken": true
 		},
 		{
 			"name": "Noori",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 127,
 			"_copy": {
@@ -4333,6 +4504,7 @@
 		{
 			"name": "Nym",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 207,
 			"_copy": {
@@ -4393,6 +4565,7 @@
 		{
 			"name": "Oren Yogilvy",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 252,
 			"size": [
@@ -4401,7 +4574,10 @@
 			"type": {
 				"type": "humanoid",
 				"tags": [
-					"strongheart halfling"
+					{
+						"tag": "halfling",
+						"prefix": "Strongheart"
+					}
 				]
 			},
 			"alignment": [
@@ -4474,6 +4650,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"languageTags": [
 				"C",
 				"H"
@@ -4493,6 +4672,7 @@
 		{
 			"name": "Orlekto",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 256,
 			"_copy": {
@@ -4557,11 +4737,16 @@
 			"spellcastingTags": [
 				"O"
 			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity"
+			],
 			"hasToken": true
 		},
 		{
 			"name": "Orok",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 115,
 			"_copy": {
@@ -4607,6 +4792,7 @@
 		{
 			"name": "Othovir",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 255,
 			"size": [
@@ -4704,6 +4890,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"rapier|phb"
+			],
 			"actionTags": [
 				"Parry"
 			],
@@ -4724,6 +4913,9 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4754,6 +4946,7 @@
 		{
 			"name": "Pow Ming",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 216,
 			"_copy": {
@@ -4854,11 +5047,18 @@
 				"DR",
 				"E"
 			],
-			"hasToken": true
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
+			],
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Princess Serissa",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 209,
 			"_copy": {
@@ -4911,7 +5111,8 @@
 				"B",
 				"L"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Purple Wormling",
@@ -4992,12 +5193,17 @@
 				"blinded",
 				"restrained"
 			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Rool",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 221,
 			"_copy": {
@@ -5088,6 +5294,7 @@
 		{
 			"name": "Shaldoor",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 256,
 			"_copy": {
@@ -5152,11 +5359,16 @@
 			"spellcastingTags": [
 				"O"
 			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity"
+			],
 			"hasToken": true
 		},
 		{
 			"name": "Shalvus Martholio",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 250,
 			"size": [
@@ -5239,6 +5451,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"hand crossbow|phb",
+				"quarterstaff|phb"
+			],
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -5262,6 +5478,7 @@
 		{
 			"name": "Sharda",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 103,
 			"_copy": {
@@ -5368,7 +5585,7 @@
 				"name": "Guard",
 				"source": "MM",
 				"_trait": {
-					"name": "Mountain Dwarf",
+					"name": "Shield Dwarf",
 					"source": "PHB"
 				}
 			},
@@ -5383,6 +5600,9 @@
 						"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d8 + 1}) bludgeoning damage, or 6 ({@damage 1d10 + 1}) bludgeoning damage if used with two hands."
 					]
 				}
+			],
+			"attachedItems": [
+				"warhammer|phb"
 			],
 			"senseTags": [
 				"D"
@@ -5408,7 +5628,7 @@
 				"name": "Noble",
 				"source": "MM",
 				"_trait": {
-					"name": "Mountain Dwarf",
+					"name": "Shield Dwarf",
 					"source": "PHB"
 				}
 			},
@@ -5423,6 +5643,9 @@
 						"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d8 + 1}) bludgeoning damage, or 6 ({@damage 1d10 + 1}) bludgeoning damage if used with two hands."
 					]
 				}
+			],
+			"attachedItems": [
+				"warhammer|phb"
 			],
 			"senseTags": [
 				"D"
@@ -5443,6 +5666,7 @@
 		{
 			"name": "Sir Baric Nylef",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 249,
 			"size": [
@@ -5523,6 +5747,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"heavy crossbow|phb",
+				"maul|phb"
+			],
 			"languageTags": [
 				"C"
 			],
@@ -5542,6 +5770,7 @@
 		{
 			"name": "Sirac of Suzail",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 247,
 			"size": [
@@ -5623,6 +5852,10 @@
 						"Sirac adds 2 to his AC against on melee attack that would hit him. To do so, Sirac must see the attacker and be wielding a melee weapon."
 					]
 				}
+			],
+			"attachedItems": [
+				"dart|phb",
+				"shortsword|phb"
 			],
 			"actionTags": [
 				"Parry"
@@ -5897,6 +6130,19 @@
 				"restrained",
 				"unconscious"
 			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
+			"savingThrowForcedLegendary": [
+				"constitution",
+				"strength"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"intelligence",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -5934,6 +6180,7 @@
 		{
 			"name": "Tartha",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 207,
 			"_copy": {
@@ -5953,6 +6200,7 @@
 		{
 			"name": "Tau",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 103,
 			"_copy": {
@@ -6019,6 +6267,7 @@
 		{
 			"name": "Thane Kayalithica",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 153,
 			"size": [
@@ -6140,6 +6389,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"greatclub|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -6170,6 +6422,10 @@
 			"conditionInflictSpell": [
 				"prone"
 			],
+			"savingThrowForced": [
+				"dexterity",
+				"strength"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -6185,7 +6441,7 @@
 				"name": "Bandit Captain",
 				"source": "MM",
 				"_trait": {
-					"name": "Mountain Dwarf",
+					"name": "Shield Dwarf",
 					"source": "PHB"
 				},
 				"_mod": {
@@ -6244,6 +6500,7 @@
 		{
 			"name": "Tholtz Daggerdark",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 221,
 			"_copy": {
@@ -6456,6 +6713,7 @@
 		{
 			"name": "Tug",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 209,
 			"_copy": {
@@ -6475,6 +6733,7 @@
 		{
 			"name": "Turlang",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 107,
 			"_copy": {
@@ -6527,11 +6786,15 @@
 			"spellcastingTags": [
 				"O"
 			],
+			"savingThrowForcedSpell": [
+				"strength"
+			],
 			"hasToken": true
 		},
 		{
 			"name": "Urgala Meltimer",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 254,
 			"size": [
@@ -6616,6 +6879,10 @@
 						"{@atk rw} {@hit 3} to hit, range 80/320 ft., one target. {@h}5 ({@damage 1d6 + 1}) piercing damage. Urgala carries a quiver of twenty arrows."
 					]
 				}
+			],
+			"attachedItems": [
+				"morningstar|phb",
+				"shortbow|phb"
 			],
 			"actionTags": [
 				"Multiattack"
@@ -6788,6 +7055,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"shortbow|phb",
+				"spear|phb"
+			],
 			"languageTags": [
 				"C",
 				"OTH"
@@ -6808,6 +7079,10 @@
 				"RNG",
 				"RW",
 				"THW"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6985,6 +7260,7 @@
 		{
 			"name": "Vaal",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 207,
 			"_copy": {
@@ -7004,6 +7280,7 @@
 		{
 			"name": "Vaasha",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 256,
 			"_copy": {
@@ -7068,11 +7345,16 @@
 			"spellcastingTags": [
 				"O"
 			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity"
+			],
 			"hasToken": true
 		},
 		{
 			"name": "Wiri Fleagol",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 176,
 			"_copy": {
@@ -7140,6 +7422,7 @@
 		{
 			"name": "Xolkin Alassandar",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 27,
 			"_copy": {
@@ -7306,6 +7589,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -7334,6 +7620,14 @@
 				"incapacitated",
 				"paralyzed",
 				"prone"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -7410,6 +7704,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"greatsword|phb",
+				"longbow|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -7428,6 +7726,9 @@
 			],
 			"conditionInflict": [
 				"incapacitated"
+			],
+			"savingThrowForced": [
+				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7468,6 +7769,7 @@
 		{
 			"name": "Zaltember",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 180,
 			"size": [
@@ -7522,6 +7824,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"battleaxe|phb",
+				"javelin|phb"
+			],
 			"languageTags": [
 				"C",
 				"GI"
@@ -7540,6 +7846,7 @@
 		{
 			"name": "Zephyros",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 33,
 			"size": [
@@ -7660,7 +7967,7 @@
 				{
 					"name": "Wind Aura",
 					"entries": [
-						"A magical aura of wind surrounds Zephyros. The aura is a 10-foot-radius sphere that lasts as long as he maintains concentration on it (as if concentrating on a spell). While the aura is in effect, Zephyros gains a +2 bonus to his AC against ranged weapon attacks, and all open flames within the aura are extinguished unless they are magical."
+						"A magical aura of wind surrounds Zephyros. The aura is a 10-foot-radius sphere that lasts as long as he maintains {@status concentration} on it (as if {@status concentration||concentrating} on a spell). While the aura is in effect, Zephyros gains a +2 bonus to his AC against ranged weapon attacks, and all open flames within the aura are extinguished unless they are magical."
 					]
 				},
 				{
@@ -7718,6 +8025,16 @@
 				"invisible",
 				"restrained"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"intelligence",
+				"strength",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -7725,6 +8042,7 @@
 		{
 			"name": "Zi Liang",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "SKT",
 			"page": 251,
 			"size": [
@@ -7807,6 +8125,10 @@
 						"{@atk rw} {@hit 4} to hit, range 30/120 ft., one target. {@h}4 ({@damage 1d4 + 2}) bludgeoning damage. Zi carries twenty sling stones."
 					]
 				}
+			],
+			"attachedItems": [
+				"quarterstaff|phb",
+				"sling|phb"
 			],
 			"actionTags": [
 				"Multiattack"

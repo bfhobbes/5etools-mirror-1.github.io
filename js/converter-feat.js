@@ -1,11 +1,5 @@
 "use strict";
 
-if (typeof module !== "undefined") {
-	const cv = require("./converterutils.js");
-	Object.assign(global, cv);
-	global.PropOrder = require("./utils-proporder.js");
-}
-
 class FeatParser extends BaseParser {
 	/**
 	 * Parses feats from raw text pastes
@@ -61,7 +55,10 @@ class FeatParser extends BaseParser {
 		}
 
 		if (!feat.entries.length) delete feat.entries;
-		else this._setAbility(feat, options);
+		else {
+			this._mutMergeHangingListItems(feat, options);
+			this._setAbility(feat, options);
+		}
 
 		const statsOut = this._getFinalState(feat, options);
 
@@ -107,8 +104,10 @@ class FeatParser extends BaseParser {
 				pt = pt.trim();
 
 				if (/^spellcasting$/i.test(pt)) return pre.spellcasting2020 = true;
-
 				if (/^pact magic feature$/i.test(pt)) return pre.spellcasting2020 = true;
+
+				if (/^spellcasting feature$/i.test(pt)) return pre.spellcastingFeature = true;
+				if (/^spellcasting feature from a class that prepares spells$/i.test(pt)) return pre.spellcastingPrepared = true;
 
 				if (/proficiency with a martial weapon/i.test(pt)) {
 					pre.proficiency = pre.proficiency || [{}];
@@ -116,12 +115,27 @@ class FeatParser extends BaseParser {
 					return;
 				}
 
+				if (/Martial Weapon Proficiency/i.test(pt)) {
+					pre.proficiency = pre.proficiency || [{}];
+					pre.proficiency[0].weaponGroup = "martial";
+					return;
+				}
+
 				const mLevel = /^(?<level>\d+).. level$/i.exec(pt);
 				if (mLevel) return pre.level = Number(mLevel.groups.level);
 
-				const mFeat = /^(?<feat>.*?) feat$/i.exec(pt);
+				const mFeat = /^(?<name>.*?) feat$/i.exec(pt);
 				if (mFeat) {
-					return (pre.feat = pre.feat || []).push(mFeat.groups.feat.toLowerCase().trim());
+					return (pre.feat = pre.feat || []).push(mFeat.groups.name.toLowerCase().trim());
+				}
+
+				const mBackground = /^(?<name>.*?) background$/i.exec(pt);
+				if (mBackground) {
+					const name = mBackground.groups.name.trim();
+					return (pre.background = pre.background || []).push({
+						name,
+						displayEntry: `{@background ${name}}`,
+					});
 				}
 
 				const mAlignment = /^(?<align>.*?) alignment/i.exec(pt);
@@ -131,6 +145,22 @@ class FeatParser extends BaseParser {
 						pre.alignment = alignment;
 						return;
 					}
+				}
+
+				const mCampaign = /^(?<name>.*)? Campaign$/i.exec(pt);
+				if (mCampaign) {
+					return (pre.campaign = pre.campaign || []).push(mCampaign.groups.name);
+				}
+
+				const mClass = new RegExp(`^${ConverterConst.STR_RE_CLASS}(?: class)?$`, "i").exec(pt);
+				if (mClass) {
+					return pre.level = {
+						level: 1,
+						class: {
+							name: mClass.groups.name,
+							visible: true,
+						},
+					};
 				}
 
 				pre.other = pt;
@@ -154,9 +184,33 @@ class FeatParser extends BaseParser {
 		if (pres.length) feat.prerequisite = pres;
 	}
 
+	static _mutMergeHangingListItems (feat, options) {
+		const ixStart = feat.entries.findIndex(ent => typeof ent === "string" && /following benefits:$/.test(ent));
+		if (!~ixStart) return;
+
+		let list;
+		for (let i = ixStart + 1; i < feat.entries.length; ++i) {
+			const ent = feat.entries[i];
+			if (ent.type !== "entries" || !ent.name || !ent.entries?.length) break;
+
+			if (!list) list = {type: "list", style: "list-hang-notitle", items: []};
+
+			list.items.push({
+				...ent,
+				type: "item",
+			});
+			feat.entries.splice(i, 1);
+			--i;
+		}
+
+		if (!list?.items?.length) return;
+
+		feat.entries.splice(ixStart + 1, 0, list);
+	}
+
 	static _setAbility (feat, options) {
 		const walker = MiscUtil.getWalker({
-			keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST,
+			keyBlocklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLOCKLIST,
 			isNoModification: true,
 		});
 		walker.walk(
@@ -165,9 +219,12 @@ class FeatParser extends BaseParser {
 				object: (obj) => {
 					if (obj.type !== "list") return;
 
-					if (typeof obj.items[0] === "string" && /^increase your/i.test(obj.items[0])) {
+					const str = typeof obj.items[0] === "string" ? obj.items[0] : obj.items[0].entries?.[0];
+					if (typeof str !== "string") return;
+
+					if (/^increase your/i.test(str)) {
 						const abils = [];
-						obj.items[0].replace(/(Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma)/g, (...m) => {
+						str.replace(/(Strength|Dexterity|Constitution|Intelligence|Wisdom|Charisma)/g, (...m) => {
 							abils.push(m[1].toLowerCase().slice(0, 3));
 						});
 
@@ -185,7 +242,7 @@ class FeatParser extends BaseParser {
 						}
 
 						obj.items.shift();
-					} else if (typeof obj.items[0] === "string" && /^increase (?:one|an) ability score of your choice by 1/i.test(obj.items[0])) {
+					} else if (/^increase (?:one|an) ability score of your choice by 1/i.test(str)) {
 						feat.ability = [
 							{
 								choose: {
@@ -203,8 +260,4 @@ class FeatParser extends BaseParser {
 	}
 }
 
-if (typeof module !== "undefined") {
-	module.exports = {
-		FeatParser,
-	};
-}
+globalThis.FeatParser = FeatParser;

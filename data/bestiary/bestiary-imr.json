@@ -28,6 +28,7 @@
 		{
 			"name": "\"The Demogorgon\"",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IMR",
 			"page": 53,
 			"size": [
@@ -142,6 +143,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"battleaxe|phb",
+				"morningstar|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -168,12 +173,18 @@
 				"incapacitated",
 				"stunned"
 			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Andras",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IMR",
 			"page": 31,
 			"_copy": {
@@ -244,6 +255,7 @@
 		{
 			"name": "Barbatos",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IMR",
 			"page": 52,
 			"size": [
@@ -360,6 +372,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"light crossbow|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -387,6 +402,14 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"strength"
 			],
 			"hasToken": true
 		},
@@ -500,7 +523,7 @@
 					"name": "Petrifying Gaze",
 					"entries": [
 						"When a creature that can see the medusa's eyes starts its turn within 30 feet of the medusa, the medusa can force it to make a {@dc 14} Constitution saving throw if the medusa isn't {@condition incapacitated} and can see the creature. If the saving throw fails by 5 or more, the creature is instantly {@condition petrified}. Otherwise, a creature that fails the save begins to turn to metal, wood, or porcelain (the medusa's choice) and is {@condition restrained}. The {@condition restrained} creature must repeat the saving throw at the end of its next turn, becoming {@condition petrified} on a failure or ending the effect on a success. The petrification lasts until the creature is freed by the  {@spell greater restoration} spell or other magic.",
-						"Unless surprised, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can't see the medusa until the start of its next turn, when it can avert its eyes again. If the creature looks at the medusa in the meantime, it must immediately make the save.",
+						"Unless {@quickref Surprise|PHB|3|0|surprised}, a creature can avert its eyes to avoid the saving throw at the start of its turn. If the creature does so, it can't see the medusa until the start of its next turn, when it can avert its eyes again. If the creature looks at the medusa in the meantime, it must immediately make the save.",
 						"If the medusa sees itself reflected on a polished surface within 30 feet of it and in an area of bright light, the medusa is, due to its curse, affected by its own gaze."
 					]
 				}
@@ -512,11 +535,18 @@
 				"petrified",
 				"restrained"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity"
+			],
 			"hasToken": true
 		},
 		{
 			"name": "Grandfather Oak",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IMR",
 			"page": 5,
 			"_copy": {
@@ -545,6 +575,7 @@
 		{
 			"name": "Lynx Creatlach",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IMR",
 			"page": 54,
 			"size": [
@@ -669,6 +700,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Damage Absorption",
 				"Immutable Form",
@@ -698,6 +732,7 @@
 		{
 			"name": "Moghadam",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IMR",
 			"page": 55,
 			"size": [
@@ -857,6 +892,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"ruinblade|imr"
+			],
 			"languageTags": [
 				"AB",
 				"C",
@@ -877,6 +915,14 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForced": [
+				"intelligence"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluffImages": true
@@ -1011,6 +1057,12 @@
 				"paralyzed",
 				"prone"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -1018,6 +1070,7 @@
 		{
 			"name": "Seodra",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IMR",
 			"page": 41,
 			"_copy": {
@@ -1070,6 +1123,7 @@
 		{
 			"name": "Sir Ursas",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IMR",
 			"page": 56,
 			"size": [
@@ -1179,6 +1233,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"spear|phb"
+			],
 			"traitTags": [
 				"Brute"
 			],
@@ -1202,6 +1259,9 @@
 			],
 			"conditionInflict": [
 				"prone"
+			],
+			"savingThrowForced": [
+				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -1293,6 +1353,7 @@
 		{
 			"name": "Stolos",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IMR",
 			"page": 33,
 			"_copy": {
@@ -1335,6 +1396,7 @@
 		{
 			"name": "Tarnhem",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IMR",
 			"page": 19,
 			"_copy": {
@@ -1369,6 +1431,7 @@
 		{
 			"name": "Thessalar",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IMR",
 			"page": 57,
 			"size": [
@@ -1523,6 +1586,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"languageTags": [
 				"C",
 				"DR",
@@ -1548,6 +1614,13 @@
 				"RW",
 				"THW"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -1555,6 +1628,7 @@
 		{
 			"name": "Thessalar's Homunculus",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "IMR",
 			"page": 35,
 			"_copy": {
@@ -1580,7 +1654,8 @@
 				"MW",
 				"RW"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Thessalheart Construct",
@@ -1661,6 +1736,9 @@
 			"conditionInflict": [
 				"poisoned",
 				"unconscious"
+			],
+			"savingThrowForced": [
+				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1848,6 +1926,14 @@
 				"grappled",
 				"prone",
 				"restrained"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
+			"savingThrowForcedLegendary": [
+				"strength",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true

@@ -591,6 +591,37 @@
 			]
 		},
 		{
+			"name": "Hoopak",
+			"source": "DSotDQ",
+			"page": 188,
+			"type": "M",
+			"rarity": "none",
+			"weight": 2,
+			"value": 10,
+			"weaponCategory": "martial",
+			"property": [
+				"A",
+				"F",
+				"S",
+				"2H"
+			],
+			"range": "40/160",
+			"dmg1": "1d6",
+			"dmgType": "P",
+			"weapon": true,
+			"entries": [
+				"A hoopak is a sturdy stick with a sling at one end and a pointed tip at the other.",
+				{
+					"type": "entries",
+					"name": "Special",
+					"entries": [
+						"When you make a melee attack with this weapon, you ignore its ammunition property. You can use the hoopak as a martial ranged weapon. If you do, it uses the ammunition property, uses sling bullets, and deals {@damage 1d4} bludgeoning damage on a hit."
+					]
+				}
+			],
+			"ammoType": "sling bullet|phb"
+		},
+		{
 			"name": "Hunting Rifle",
 			"source": "DMG",
 			"page": 268,
@@ -1557,6 +1588,38 @@
 	],
 	"itemProperty": [
 		{
+			"abbreviation": "Vst",
+			"source": "TDCSR",
+			"page": 200,
+			"entries": [
+				{
+					"type": "entries",
+					"name": "Vestige of Divergence",
+					"page": 200,
+					"entries": [
+						"{@note This item is a Vestige of Divergence, see {@book Tal'Dorei Treasures|TDCSR|5|Vestiges of Divergence} for more information.}"
+					]
+				}
+			],
+			"template": "Vestige"
+		},
+		{
+			"abbreviation": "ER",
+			"source": "TDCSR",
+			"page": 195,
+			"entriesTemplate": [
+				{
+					"type": "entries",
+					"name": "Extended Reach",
+					"page": 195,
+					"entries": [
+						"This weapon adds {{item.reach}} feet to your reach when you attack with it. This property also determines your reach for {@action opportunity attack|PHB|opportunity attacks} with an Extended Reach weapon."
+					]
+				}
+			],
+			"template": "{{prop_name}} ({{item.reach}}\u00A0ft.)"
+		},
+		{
 			"abbreviation": "A",
 			"source": "PHB",
 			"page": 146,
@@ -1570,7 +1633,7 @@
 					]
 				}
 			],
-			"template": "{{prop_name}} ({{item.range}} ft.)"
+			"template": "{{prop_name}} ({{item.range}}\u00A0ft.)"
 		},
 		{
 			"abbreviation": "AF",
@@ -1586,7 +1649,7 @@
 					]
 				}
 			],
-			"template": "{{prop_name}} ({{item.range}} ft.)"
+			"template": "{{prop_name}} ({{item.range}}\u00A0ft.)"
 		},
 		{
 			"abbreviation": "BF",
@@ -1706,7 +1769,7 @@
 					]
 				}
 			],
-			"template": "{{prop_name}} ({{item.range}} ft.)"
+			"template": "{{prop_name}} ({{item.range}}\u00A0ft.)"
 		},
 		{
 			"abbreviation": "2H",
@@ -1739,6 +1802,15 @@
 		}
 	],
 	"itemType": [
+		{
+			"abbreviation": "IDG",
+			"source": "TDCSR",
+			"name": "Illegal Drug",
+			"page": 85,
+			"entriesTemplate": [
+				"{@note This item is an illegal drug; see {@variantrule Illegal Drugs|TDCSR} for more information.}"
+			]
+		},
 		{
 			"abbreviation": "AT",
 			"source": "PHB",
@@ -1901,6 +1973,7 @@
 	"itemTypeAdditionalEntries": [
 		{
 			"appliesTo": "INS",
+			"source": "XGE",
 			"entries": [
 				"Proficiency with a musical instrument indicates you are familiar with the techniques used to play it. You also have knowledge of some songs commonly performed with that instrument.",
 				{
@@ -1950,6 +2023,7 @@
 		},
 		{
 			"appliesTo": "GS",
+			"source": "XGE",
 			"entries": [
 				"Proficiency with a gaming set applies to one type of game, such as Three-Dragon Ante or games of chance that use dice.",
 				{

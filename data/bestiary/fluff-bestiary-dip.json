@@ -119,6 +119,28 @@
 						}
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/DIP/Rock Gnome Recluse.webp"
+					}
+				}
+			]
+		},
+		{
+			"name": "Skeletal Riding Horse",
+			"source": "DIP",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/DIP/Skeletal Riding Horse.png"
+					}
+				}
 			]
 		}
 	]

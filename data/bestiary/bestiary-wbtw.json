@@ -133,6 +133,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -334,6 +337,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"rapier|phb"
+			],
 			"actionTags": [
 				"Parry"
 			],
@@ -525,6 +531,10 @@
 				"grappled",
 				"restrained"
 			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -636,7 +646,8 @@
 				}
 			],
 			"traitTags": [
-				"Fey Ancestry"
+				"Fey Ancestry",
+				"Tunneler"
 			],
 			"languageTags": [
 				"C",
@@ -659,6 +670,10 @@
 				"charmed",
 				"deafened",
 				"prone"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -751,6 +766,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"glaive|phb"
+			],
 			"traitTags": [
 				"Amphibious"
 			],
@@ -770,6 +788,9 @@
 			],
 			"conditionInflict": [
 				"charmed"
+			],
+			"savingThrowForced": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -855,6 +876,9 @@
 			],
 			"conditionInflict": [
 				"incapacitated"
+			],
+			"savingThrowForced": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -970,6 +994,9 @@
 			],
 			"conditionInflict": [
 				"frightened"
+			],
+			"savingThrowForced": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1166,6 +1193,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"+1 longsword|dmg",
+				"dagger|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -1291,7 +1322,7 @@
 				{
 					"name": "Uncanny Awareness",
 					"entries": [
-						"Endelyn can't be surprised."
+						"Endelyn can't be {@quickref Surprise|PHB|3|0|surprised}."
 					]
 				}
 			],
@@ -1325,6 +1356,10 @@
 			],
 			"spellcastingTags": [
 				"O"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1429,6 +1464,10 @@
 				"petrified",
 				"prone",
 				"restrained"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1957,12 +1996,16 @@
 			"conditionInflict": [
 				"blinded"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Gloam",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WBtW",
 			"page": 93,
 			"size": [
@@ -2108,6 +2151,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"club|phb",
+				"sling|phb"
+			],
 			"traitTags": [
 				"Pack Tactics"
 			],
@@ -2193,6 +2240,10 @@
 						"{@atk rw} {@hit 5} to hit (the target gains no benefit from less than total cover), range 320 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage. Hit or Miss: Immediately after making this attack, the harengon can use the Hide action."
 					]
 				}
+			],
+			"attachedItems": [
+				"club|phb",
+				"light crossbow|phb"
 			],
 			"languageTags": [
 				"C",
@@ -2436,6 +2487,16 @@
 				"prone",
 				"restrained"
 			],
+			"savingThrowForced": [
+				"charisma",
+				"constitution",
+				"intelligence",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -2625,6 +2686,10 @@
 			],
 			"conditionInflict": [
 				"prone"
+			],
+			"savingThrowForced": [
+				"charisma",
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2864,6 +2929,13 @@
 				"charmed",
 				"restrained"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -2972,6 +3044,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -2995,6 +3070,13 @@
 			],
 			"conditionInflict": [
 				"unconscious"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3111,6 +3193,9 @@
 			"conditionInflict": [
 				"grappled",
 				"incapacitated"
+			],
+			"savingThrowForced": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3232,6 +3317,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"+1 quarterstaff|dmg"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3253,6 +3341,13 @@
 			"conditionInflictSpell": [
 				"paralyzed",
 				"prone"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3402,6 +3497,9 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3652,6 +3750,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb",
+				"shortsword|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3896,6 +3998,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"hand crossbow|phb",
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Fey Ancestry",
 				"Sneak Attack"
@@ -4069,6 +4175,11 @@
 				"incapacitated",
 				"unconscious"
 			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"dexterity",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -4168,9 +4279,12 @@
 				{
 					"name": "Twin Sight (Recharges after a Short or Long Rest)",
 					"entries": [
-						"In her mind's eye, a Selenelion twin can see what the other twin sees for up to 1 minute, provided both twins are alive and on the same plane of existence. Maintaining this effect requires concentration (as if concentrating on a spell)."
+						"In her mind's eye, a Selenelion twin can see what the other twin sees for up to 1 minute, provided both twins are alive and on the same plane of existence. Maintaining this effect requires {@status concentration} (as if {@status concentration||concentrating} on a spell)."
 					]
 				}
+			],
+			"attachedItems": [
+				"dagger|phb"
 			],
 			"traitTags": [
 				"Fey Ancestry",
@@ -4194,6 +4308,9 @@
 			],
 			"conditionInflict": [
 				"blinded"
+			],
+			"savingThrowForced": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4274,7 +4391,7 @@
 				{
 					"name": "Superior Invisibility",
 					"entries": [
-						"As a bonus action, Sir Talavar can magically turn {@condition invisible} until his concentration ends (as if concentrating on a spell). Any equipment Sir Talavar wears or carries is {@condition invisible} with him."
+						"As a bonus action, Sir Talavar can magically turn {@condition invisible} until his {@status concentration} ends (as if {@status concentration||concentrating} on a spell). Any equipment Sir Talavar wears or carries is {@condition invisible} with him."
 					]
 				},
 				{
@@ -4359,6 +4476,12 @@
 			],
 			"conditionInflictSpell": [
 				"blinded"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4517,6 +4640,10 @@
 			"conditionInflictSpell": [
 				"charmed"
 			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -4624,6 +4751,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"eldritch staff|wbtw"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -4645,6 +4775,10 @@
 				"charmed",
 				"incapacitated",
 				"invisible"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4751,6 +4885,9 @@
 			],
 			"conditionInflict": [
 				"prone"
+			],
+			"savingThrowForced": [
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4873,6 +5010,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"steel|wbtw"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -4894,6 +5034,10 @@
 			],
 			"conditionInflictSpell": [
 				"prone"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5003,6 +5147,9 @@
 			"conditionInflict": [
 				"incapacitated"
 			],
+			"savingThrowForced": [
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -5010,6 +5157,7 @@
 		{
 			"name": "Thinnings",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "WBtW",
 			"page": 15,
 			"_copy": {
@@ -5349,6 +5497,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -5454,7 +5605,7 @@
 				{
 					"name": "Secret Expertise",
 					"entries": [
-						"The hand has one of these additional skills: Acrobatics +6, Animal Handling +5, Arcana +5, Athletics +4, Medicine +5, or Performance +5."
+						"The hand has one of these additional skills: {@skill Acrobatics} {@skillCheck acrobatics 6}, {@skill Animal Handling} {@skillCheck animal_handling 5}, {@skill Arcana} {@skillCheck arcana 5}, {@skill Athletics} {@skillCheck athletics 4}, {@skill Medicine} {@skillCheck medicine 5}, or {@skill Performance} {@skillCheck performance 5}."
 					]
 				}
 			],
@@ -5471,6 +5622,9 @@
 						"The hand sprinkles a pinch of pixie dust on itself or another creature it can see within 5 feet of it. The recipient gains a flying speed of 30 feet for 1 minute. If the creature is airborne when this effect ends, it falls safely to the ground, taking no damage and landing on its feet."
 					]
 				}
+			],
+			"attachedItems": [
+				"dagger|phb"
 			],
 			"languageTags": [
 				"C",
@@ -5615,6 +5769,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -5750,9 +5907,12 @@
 				{
 					"name": "Animate Corpse (1/Day)",
 					"entries": [
-						"Zargash targets the lifeless corpse of one Humanoid he can see within 30 feet of him and commands it to rise, transforming it into a zombie under his control. The zombie takes its turn immediately after Zargash. Animating the zombie requires Zargash's concentration (as if concentrating on a spell). The zombie reverts to an inanimate corpse after 10 minutes, when it drops to 0 hit points, or when Zargash's concentration ends."
+						"Zargash targets the lifeless corpse of one Humanoid he can see within 30 feet of him and commands it to rise, transforming it into a zombie under his control. The zombie takes its turn immediately after Zargash. Animating the zombie requires Zargash's {@status concentration} (as if {@status concentration||concentrating} on a spell). The zombie reverts to an inanimate corpse after 10 minutes, when it drops to 0 hit points, or when Zargash's {@status concentration} ends."
 					]
 				}
+			],
+			"attachedItems": [
+				"warhammer|phb"
 			],
 			"languageTags": [
 				"C"
@@ -5771,6 +5931,10 @@
 				"deafened",
 				"paralyzed",
 				"prone"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,

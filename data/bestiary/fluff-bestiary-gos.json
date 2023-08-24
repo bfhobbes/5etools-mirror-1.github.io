@@ -67,6 +67,19 @@
 			]
 		},
 		{
+			"name": "Captain Xendros",
+			"source": "GoS",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/GoS/004-01-04.png"
+					}
+				}
+			]
+		},
+		{
 			"name": "Drowned Ascetic",
 			"source": "GoS",
 			"entries": [
@@ -382,6 +395,19 @@
 			]
 		},
 		{
+			"name": "Krell Grohlg",
+			"source": "GoS",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/GoS/034-04-04-unholy-shrine-p92.png"
+					}
+				}
+			]
+		},
+		{
 			"name": "Kysh",
 			"source": "GoS",
 			"entries": [
@@ -466,6 +492,15 @@
 							]
 						}
 					]
+				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/GoS/Lizardfolk Render.webp"
+					}
 				}
 			]
 		},
@@ -571,6 +606,19 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/GoS/Locathah.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Master Refrum",
+			"source": "GoS",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/GoS/Master Refrum.webp"
 					}
 				}
 			]
@@ -1008,6 +1056,19 @@
 							]
 						}
 					]
+				}
+			]
+		},
+		{
+			"name": "Sauriv",
+			"source": "GoS",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/GoS/Sauriv.webp"
+					}
 				}
 			]
 		},

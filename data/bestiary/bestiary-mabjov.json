@@ -111,6 +111,9 @@
 			"conditionInflict": [
 				"poisoned"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -276,6 +279,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"longsword|phb"
+			],
 			"traitTags": [
 				"Magic Resistance",
 				"Regeneration",
@@ -308,6 +314,10 @@
 			],
 			"conditionInflictSpell": [
 				"prone"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -527,7 +537,7 @@
 				{
 					"name": "Insect Gorge (Costs 2 Actions)",
 					"entries": [
-						"Baalzebul disgorges a swarm of biting flies (otherwise same as insect plague) that deals 44 ({@damage 8d10}) piercing damage and does not require concentration."
+						"Baalzebul disgorges a swarm of biting flies (otherwise same as insect plague) that deals 44 ({@damage 8d10}) piercing damage and does not require {@status concentration}."
 					]
 				}
 			],
@@ -579,6 +589,17 @@
 				"paralyzed",
 				"stunned",
 				"unconscious"
+			],
+			"savingThrowForced": [
+				"charisma",
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"dexterity",
+				"intelligence",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -677,7 +698,7 @@
 				{
 					"name": "Relentless Hunter",
 					"entries": [
-						"The bebilith may use a bonus action to mark prey that it has damaged. Only one creature can be marked at a time. The bebilith always knows the exact location of the marked prey on the current plane of existence, cannot be surprised by it, and has advantage on all attack rolls against it."
+						"The bebilith may use a bonus action to mark prey that it has damaged. Only one creature can be marked at a time. The bebilith always knows the exact location of the marked prey on the current plane of existence, cannot be {@quickref Surprise|PHB|3|0|surprised} by it, and has advantage on all attack rolls against it."
 					]
 				},
 				{
@@ -953,6 +974,10 @@
 				"MW",
 				"RW"
 			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -1036,7 +1061,7 @@
 				{
 					"name": "Assassinate",
 					"entries": [
-						"During its first turn, the slayer has advantage on attack rolls against any creature that hasn't taken a turn. Any hit the slayer scores against a surprised creature is a critical hit."
+						"During its first turn, the slayer has advantage on attack rolls against any creature that hasn't taken a turn. Any hit the slayer scores against a {@quickref Surprise|PHB|3|0|surprised} creature is a critical hit."
 					]
 				},
 				{
@@ -1132,6 +1157,9 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForced": [
+				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1349,6 +1377,9 @@
 			"conditionInflict": [
 				"charmed"
 			],
+			"savingThrowForced": [
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -1484,6 +1515,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"heavy crossbow|phb",
+				"shortsword|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1508,6 +1543,13 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1682,6 +1724,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -1711,6 +1756,11 @@
 			],
 			"conditionInflictSpell": [
 				"incapacitated"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1945,6 +1995,13 @@
 			"conditionInflictSpell": [
 				"prone"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -2070,7 +2127,7 @@
 				{
 					"name": "Draconic Transformation",
 					"entries": [
-						"When Dagryn drops to 0 hit points, instead of falling {@condition unconscious}, he begins to transform into his dragon form. He immediately gains all the statistics of an adult black dragon with the exception that his size is medium, and he is {@condition stunned}. At the start of his next turn, he grows to large size, but remains {@condition stunned}. At the start of his subsequent turn, Dagryn grows to huge size, takes the form of an adult black dragon and is no longer considered {@condition stunned}. Dagryn remains in his dragon form for 24 hours whereupon he reverts to his dwarven form and stat block."
+						"When Dagryn drops to 0 hit points, instead of falling {@condition unconscious}, he begins to transform into his dragon form. He immediately gains all the statistics of an {@creature adult black dragon} with the exception that his size is medium, and he is {@condition stunned}. At the start of his next turn, he grows to large size, but remains {@condition stunned}. At the start of his subsequent turn, Dagryn grows to huge size, takes the form of an {@creature adult black dragon} and is no longer considered {@condition stunned}. Dagryn remains in his dragon form for 24 hours whereupon he reverts to his dwarven form and stat block."
 					]
 				}
 			],
@@ -2084,9 +2141,12 @@
 				{
 					"name": "Invisibility (Recharges after a Short or Long Rest)",
 					"entries": [
-						"Dagryn magically turns {@condition invisible} until he attacks, casts a spell, or until its concentration is broken, up to 1 hour (as if concentrating on a spell). Any equipment Dagryn wears or carries is {@condition invisible} with it."
+						"Dagryn magically turns {@condition invisible} until he attacks, casts a spell, or until its {@status concentration} is broken, up to 1 hour (as if {@status concentration||concentrating} on a spell). Any equipment Dagryn wears or carries is {@condition invisible} with it."
 					]
 				}
+			],
+			"attachedItems": [
+				"club|phb"
 			],
 			"senseTags": [
 				"SD"
@@ -2121,6 +2181,13 @@
 				"charmed",
 				"frightened",
 				"paralyzed"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"dexterity",
+				"intelligence",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2258,7 +2325,7 @@
 				{
 					"name": "Eldritch Mind",
 					"entries": [
-						"Darien has advantage on Constitution saving throws that she makes to maintain concentration on a spell."
+						"Darien has advantage on Constitution saving throws that she makes to maintain {@status concentration} on a spell."
 					]
 				}
 			],
@@ -2301,6 +2368,9 @@
 						"When Darien takes damage, she can entomb herself in ice, which melts away at the end of her next turn. She gains 150 temporary hit points, which take as much of the triggering damage as possible. Immediately after she takes the damage, she gains vulnerability to fire damage, her speed is reduced to 0, and she is {@condition incapacitated}. These effects, including any remaining temporary hit points, all end when the ice melts."
 					]
 				}
+			],
+			"attachedItems": [
+				"war pick|phb"
 			],
 			"traitTags": [
 				"Devil's Sight"
@@ -2353,6 +2423,12 @@
 				"invisible",
 				"paralyzed",
 				"prone"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"intelligence",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2461,6 +2537,9 @@
 			"conditionInflict": [
 				"paralyzed",
 				"poisoned"
+			],
+			"savingThrowForced": [
+				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2625,6 +2704,9 @@
 			],
 			"conditionInflict": [
 				"grappled"
+			],
+			"savingThrowForced": [
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2853,6 +2935,13 @@
 				"frightened",
 				"invisible"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -3058,6 +3147,14 @@
 				"invisible",
 				"prone"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -3135,7 +3232,7 @@
 				{
 					"name": "Ambusher",
 					"entries": [
-						"In the first round of a combat, the dread doppelganger has advantage on attack rolls against any creature it has surprised."
+						"In the first round of a combat, the dread doppelganger has advantage on attack rolls against any creature it has {@quickref Surprise|PHB|3|0|surprised}."
 					]
 				},
 				{
@@ -3161,7 +3258,7 @@
 				{
 					"name": "Read Thoughts",
 					"entries": [
-						"The dread doppelganger magically reads the surface thoughts of one creature within 60 ft. of it. The effect can penetrate barriers, but 3 ft. of wood or dirt, 2 ft. of stone, 2 inches of metal, or a thin sheet of lead blocks it. While the target is in range, the dread doppelganger can continue reading its thoughts, as long as the dread doppelganger's Concentration isn't broken (as if concentrating on a spell). While reading the target's mind, the doppelganger has advantage on Wisdom (Insight) and Charisma ({@skill Deception}, {@skill Intimidation}, and {@skill Persuasion}) checks against the target."
+						"The dread doppelganger magically reads the surface thoughts of one creature within 60 ft. of it. The effect can penetrate barriers, but 3 ft. of wood or dirt, 2 ft. of stone, 2 inches of metal, or a thin sheet of lead blocks it. While the target is in range, the dread doppelganger can continue reading its thoughts, as long as the dread doppelganger's Concentration isn't broken (as if {@status concentration||concentrating} on a spell). While reading the target's mind, the doppelganger has advantage on Wisdom (Insight) and Charisma ({@skill Deception}, {@skill Intimidation}, and {@skill Persuasion}) checks against the target."
 					]
 				}
 			],
@@ -3192,6 +3289,9 @@
 				"deafened",
 				"frightened",
 				"invisible"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3343,7 +3443,7 @@
 				{
 					"name": "Focused Conjuration",
 					"entries": [
-						"While Edwin is concentrating on a conjuration spell, his concentration cannot be broken as a result of taking damage."
+						"While Edwin is {@status concentration||concentrating} on a conjuration spell, his {@status concentration} cannot be broken as a result of taking damage."
 					]
 				},
 				{
@@ -3408,6 +3508,11 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3588,6 +3693,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"languageTags": [
 				"AB",
 				"C",
@@ -3622,6 +3730,12 @@
 				"incapacitated",
 				"invisible",
 				"stunned"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3823,6 +3937,12 @@
 				"charmed",
 				"restrained"
 			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"strength",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -3986,6 +4106,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"+2 warhammer|dmg"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -4014,6 +4137,9 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4095,6 +4221,9 @@
 						"{@atk mw} {@hit 4} to hit, reach 5 ft., one target. The target is {@condition grappled} (escape {@dc 10}). All gibberlings within 5 ft. of the target can use a reaction to make a dagger attack with advantage on the attack roll."
 					]
 				}
+			],
+			"attachedItems": [
+				"dagger|phb"
 			],
 			"traitTags": [
 				"Light Sensitivity",
@@ -4231,6 +4360,10 @@
 			"conditionInflictSpell": [
 				"restrained"
 			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"strength"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -4337,6 +4470,9 @@
 						"{@atk mw} {@hit 7} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) piercing damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"shortsword|phb"
 			],
 			"traitTags": [
 				"Sneak Attack",
@@ -4535,6 +4671,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -4569,6 +4708,12 @@
 				"blinded",
 				"charmed",
 				"restrained"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"strength",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4810,6 +4955,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"mace|phb"
+			],
 			"traitTags": [
 				"Legendary Resistances",
 				"Rejuvenation",
@@ -4858,6 +5006,15 @@
 				"exhaustion",
 				"invisible",
 				"stunned"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"strength"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4962,6 +5119,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"heavy crossbow|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -4980,6 +5140,9 @@
 				"MW",
 				"RNG",
 				"RW"
+			],
+			"savingThrowForced": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5080,6 +5243,9 @@
 						"Kivan can use his action to make a ranged attack against any number of creatures with 10 feet of a point he can see within the range of his weapon. He must make a separate attack roll for each target."
 					]
 				}
+			],
+			"attachedItems": [
+				"longbow|phb"
 			],
 			"traitTags": [
 				"Fey Ancestry",
@@ -5252,6 +5418,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"greataxe|phb"
+			],
 			"traitTags": [
 				"Shapechanger"
 			],
@@ -5281,6 +5450,14 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"frightened"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5649,6 +5826,17 @@
 				"stunned",
 				"unconscious"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"dexterity",
+				"intelligence",
+				"strength",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -5782,6 +5970,9 @@
 			"miscTags": [
 				"MW"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -5849,7 +6040,7 @@
 				{
 					"name": "Assassinate",
 					"entries": [
-						"During his first turn, Montaron has advantage on attack rolls against any creature that hasn't taken a turn. Any hit Montaron scores against a surprised creature is a critical hit."
+						"During his first turn, Montaron has advantage on attack rolls against any creature that hasn't taken a turn. Any hit Montaron scores against a {@quickref Surprise|PHB|3|0|surprised} creature is a critical hit."
 					]
 				},
 				{
@@ -5903,6 +6094,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"light crossbow|phb",
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Sneak Attack"
 			],
@@ -5922,6 +6117,9 @@
 				"MW",
 				"RNG",
 				"RW"
+			],
+			"savingThrowForced": [
+				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6091,6 +6289,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"mace|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -6120,6 +6321,12 @@
 				"blinded",
 				"deafened",
 				"stunned"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6237,7 +6444,7 @@
 						{
 							"type": "list",
 							"items": [
-								"Potion of heroism: Nauk gains 10 temporary hit points for 1 hour. For the same duration, Nauk is under the effect of the {@spell bless} spell (no concentration required).",
+								"Potion of heroism: Nauk gains 10 temporary hit points for 1 hour. For the same duration, Nauk is under the effect of the {@spell bless} spell (no {@status concentration} required).",
 								"Potion of resistance: Nauk gains resistance from one damage type for 1 hour. Nauk chooses from one of these damage types: cold, fire, lightning.",
 								"Potion of superior healing: Nauk regains 28 hit points."
 							]
@@ -6252,6 +6459,10 @@
 						"Nauk adds 4 to his AC against one melee attack that would hit him. To do so, Nauk must see the attacker and be wielding a melee weapon."
 					]
 				}
+			],
+			"attachedItems": [
+				"+1 heavy crossbow|dmg",
+				"+1 maul|dmg"
 			],
 			"actionTags": [
 				"Multiattack",
@@ -6472,6 +6683,9 @@
 				"name": "Pazuzu",
 				"source": "MaBJoV"
 			},
+			"attachedItems": [
+				"greatsword|phb"
+			],
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance",
@@ -6512,6 +6726,18 @@
 				"incapacitated",
 				"restrained",
 				"unconscious"
+			],
+			"savingThrowForced": [
+				"dexterity",
+				"wisdom"
+			],
+			"savingThrowForcedLegendary": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6681,6 +6907,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"hand crossbow|phb",
+				"scimitar|phb"
+			],
 			"traitTags": [
 				"Hold Breath",
 				"Shapechanger"
@@ -6721,6 +6951,11 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6885,7 +7120,7 @@
 				{
 					"name": "Extended Concentration",
 					"entries": [
-						"The phaerimm can concentrate on two different spells at the same time. If concentration is broken, then both spells fade immediately."
+						"The phaerimm can concentrate on two different spells at the same time. If {@status concentration} is broken, then both spells fade immediately."
 					]
 				},
 				{
@@ -6976,6 +7211,15 @@
 				"paralyzed",
 				"petrified",
 				"restrained"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"intelligence",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7138,6 +7382,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"handaxe|phb"
+			],
 			"actionTags": [
 				"Multiattack",
 				"Parry"
@@ -7168,6 +7415,10 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7395,6 +7646,14 @@
 				"prone",
 				"stunned"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -7495,6 +7754,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb",
+				"shortbow|phb"
+			],
 			"traitTags": [
 				"Amphibious",
 				"Magic Resistance"
@@ -7524,6 +7787,9 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"invisible"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7635,6 +7901,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"greatsword|phb"
+			],
 			"traitTags": [
 				"Magic Resistance",
 				"Magic Weapons"
@@ -7657,6 +7926,9 @@
 			"conditionInflict": [
 				"frightened",
 				"incapacitated"
+			],
+			"savingThrowForced": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7761,6 +8033,9 @@
 						"{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}13 ({@damage 2d6 + 6}) slashing damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"greatsword|phb"
 			],
 			"traitTags": [
 				"Magic Resistance",
@@ -8045,6 +8320,18 @@
 				"frightened",
 				"stunned"
 			],
+			"savingThrowForced": [
+				"charisma"
+			],
+			"savingThrowForcedLegendary": [
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"dexterity",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -8189,7 +8476,7 @@
 				{
 					"name": "Mounted",
 					"entries": [
-						"If Suldil isn't mounted, she can use a bonus mount, provided Suldil and the young bronze dragon are on the same plane of existence. When she teleports, Suldil appears astride the young bronze dragon along with any equipment she is wearing or carrying. While mounted and not {@condition incapacitated}, Suldil can't be surprised, and both her and her mount gain advantage on Dexterity saving throws."
+						"If Suldil isn't mounted, she can use a bonus mount, provided Suldil and the young bronze dragon are on the same plane of existence. When she teleports, Suldil appears astride the young bronze dragon along with any equipment she is wearing or carrying. While mounted and not {@condition incapacitated}, Suldil can't be {@quickref Surprise|PHB|3|0|surprised}, and both her and her mount gain advantage on Dexterity saving throws."
 					]
 				},
 				{
@@ -8206,6 +8493,9 @@
 						"{@atk mw,rw} {@hit 7} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}5 ({@damage 1d4 + 3}) piercing damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"dagger|phb"
 			],
 			"languageTags": [
 				"C",
@@ -8238,6 +8528,12 @@
 				"incapacitated",
 				"invisible",
 				"stunned"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -8347,6 +8643,9 @@
 				"paralyzed",
 				"poisoned"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -8433,6 +8732,11 @@
 						"{@atk rw} {@hit 5} to hit, range 30/120 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"javelin|phb",
+				"net|phb",
+				"shortsword|phb"
 			],
 			"senseTags": [
 				"D"
@@ -8539,6 +8843,11 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"blowgun|phb",
+				"javelin|phb",
+				"shortsword|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -8558,6 +8867,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
+			],
+			"savingThrowForced": [
+				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -8658,6 +8970,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"heavy crossbow|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -8738,7 +9053,7 @@
 				{
 					"name": "Mage Slaying",
 					"entries": [
-						"When Valygar deals damage to a creature that is concentrating on a spell, that creature has disadvantage on the saving throw it makes to maintain its concentration."
+						"When Valygar deals damage to a creature that is {@status concentration||concentrating} on a spell, that creature has disadvantage on the saving throw it makes to maintain its {@status concentration}."
 					]
 				}
 			],
@@ -8769,6 +9084,9 @@
 						"When a creature within 5 feet of Valygar casts a spell, he can use his reaction to make a melee weapon attack against that creature."
 					]
 				}
+			],
+			"attachedItems": [
+				"hand crossbow|phb"
 			],
 			"actionTags": [
 				"Multiattack"
@@ -8902,6 +9220,10 @@
 						"{@atk rw} {@hit 9} to hit, ranged 80/320 ft., one target. {@h}8 ({@damage 1d6 + 5}) piercing damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"shortbow|phb",
+				"shortsword|phb"
 			],
 			"traitTags": [
 				"Keen Senses"
@@ -9083,7 +9405,7 @@
 				{
 					"name": "Special Equipment",
 					"entries": [
-						"Viconia wears a belt of fire giant strength and a cloak of protection and wields a mace +3. Without the belt, her strength is 12 and her speed is reduced to 20 ft."
+						"Viconia wears a {@item belt of fire giant strength} and a {@item cloak of protection} and wields a {@item +3 Mace||mace +3}. Without the belt, her strength is 12 and her speed is reduced to 20 ft."
 					]
 				},
 				{
@@ -9118,6 +9440,9 @@
 						"{@atk mw} {@hit 15} to hit, reach 5 ft., one target. {@h}13 ({@damage 1d6 + 10}) bludgeoning damage plus 9 ({@damage 2d8}) necrotic damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"+3 mace|dmg"
 			],
 			"traitTags": [
 				"Fey Ancestry",
@@ -9156,6 +9481,12 @@
 				"blinded",
 				"deafened",
 				"stunned"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -9295,6 +9626,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"heavy crossbow|phb",
+				"sun blade|dmg"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -9322,6 +9657,11 @@
 				"blinded",
 				"incapacitated",
 				"prone"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -9442,6 +9782,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"longsword|phb"
+			],
 			"traitTags": [
 				"Keen Senses",
 				"Pack Tactics",
@@ -9463,6 +9806,10 @@
 			],
 			"conditionInflict": [
 				"prone"
+			],
+			"savingThrowForced": [
+				"strength",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -9583,6 +9930,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"longsword|phb"
+			],
 			"traitTags": [
 				"Keen Senses",
 				"Pack Tactics",
@@ -9604,6 +9954,10 @@
 			],
 			"conditionInflict": [
 				"prone"
+			],
+			"savingThrowForced": [
+				"strength",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -9724,7 +10078,7 @@
 				{
 					"name": "Bladesong",
 					"entries": [
-						"Xan can use a bonus action to start a bladesong. His bladesong lasts for 1 minute. While using bladesong his movement increases to 40 ft., he gains a +3 bonus to his AC and he gains a +3 bonus to all concentration checks."
+						"Xan can use a bonus action to start a bladesong. His bladesong lasts for 1 minute. While using bladesong his movement increases to 40 ft., he gains a +3 bonus to his AC and he gains a +3 bonus to all {@status concentration} checks."
 					]
 				},
 				{
@@ -9747,6 +10101,9 @@
 						"{@atk mw} {@hit 9} to hit, reach 5 ft., one target. {@h}10 ({@damage 1d8 + 6}) slashing damage or 11 ({@damage 1d10 + 6}) slashing damage if wielded with two hands."
 					]
 				}
+			],
+			"attachedItems": [
+				"moonblade|dmg"
 			],
 			"traitTags": [
 				"Fey Ancestry"
@@ -9774,6 +10131,11 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -9991,6 +10353,11 @@
 			"conditionInflictSpell": [
 				"poisoned",
 				"restrained"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,

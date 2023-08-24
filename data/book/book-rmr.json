@@ -381,7 +381,7 @@
 											"id": "018",
 											"entries": [
 												"This set is a complete Dungeons & Dragons experience, enough to provide hours of play. You can even play through the adventure book multiple times. You might be surprised at how differently things can turn out! But one of the most rewarding things about D&D is that it provides the opportunity to create characters, and even worlds, of your own.",
-												"For tools and other products to help you make your own characters, visit {@link DungeonsandDragons.com|http://dungeonsanddragons.com}. There you will find the basic rules of the game for free. Those rules tell you how to create your own character to supplement or replace the characters in this set, as well as how to advance a character beyond 5th level.",
+												"For tools and other products to help you make your own characters, visit {@link DungeonsandDragons.com|https://dungeonsanddragons.com}. There you will find the basic rules of the game for free. Those rules tell you how to create your own character to supplement or replace the characters in this set, as well as how to advance a character beyond 5th level.",
 												"If you want to create a greater variety of characters or populate your adventures with other monsters, check out the fifth edition {@book Player's Handbook|PHB}, {@book Monster Manual|MM}, and {@book Dungeon Master's Guide|DMG}. These advanced rulebooks introduce you to the vast multiverse of D&D and invite you to create unique characters and worlds within it."
 											]
 										},
@@ -1399,7 +1399,7 @@
 							"page": 17,
 							"id": "05c",
 							"entries": [
-								"{@b 1. Determine surprise}. The DM determines whether anyone involved in the combat encounter is surprised.",
+								"{@b 1. Determine surprise}. The DM determines whether anyone involved in the combat encounter is {@quickref Surprise|PHB|3|0|surprised}.",
 								"{@b 2. Establish positions}. The DM decides where all the characters and monsters are located. Given the adventurers' marching order or their stated positions in the room or other location, the DM figures out where the adversaries are\u2014how far away and in what direction.",
 								"{@b 3. Roll initiative}. Everyone involved rolls initiative, determining the order of combatants' turns.",
 								"{@b 4. Take turns}. Each participant in the battle takes a turn in initiative order.",
@@ -1421,8 +1421,8 @@
 									"width": 600,
 									"height": 505
 								},
-								"The DM determines who might be surprised. If neither side tries to be stealthy, they automatically notice each other. Otherwise, the DM compares the Dexterity ({@skill Stealth}) checks of anyone hiding with the passive Wisdom ({@skill Perception}) score of each creature on the opposing side. Any character or monster that doesn't notice a threat is surprised at the start of the encounter.",
-								"If you're surprised, you can't move or take an action on your first turn of the combat, and you can't take a reaction until that turn ends. A member of a group can be surprised even if the other members aren't.",
+								"The DM determines who might be {@quickref Surprise|PHB|3|0|surprised}. If neither side tries to be stealthy, they automatically notice each other. Otherwise, the DM compares the Dexterity ({@skill Stealth}) checks of anyone hiding with the passive Wisdom ({@skill Perception}) score of each creature on the opposing side. Any character or monster that doesn't notice a threat is {@quickref Surprise|PHB|3|0|surprised} at the start of the encounter.",
+								"If you're {@quickref Surprise|PHB|3|0|surprised}, you can't move or take an action on your first turn of the combat, and you can't take a reaction until that turn ends. A member of a group can be {@quickref Surprise|PHB|3|0|surprised} even if the other members aren't.",
 								{
 									"type": "inset",
 									"id": "05e",
@@ -5340,7 +5340,7 @@
 													"width": 149,
 													"height": 178
 												},
-												"{@comic D-d-don't feel like you've gotta be limited to those{@comicH3 kiddie block shapes} for your spell effects, Morty.}",
+												"{@comic D-d-don't feel like you've gotta be limited to those {@comicH3 kiddie block shapes} for your spell effects, Morty.}",
 												"{@comic When I'm the Dungeon Master and bad guys are launching loads of {@i murder magic}, I'll just dump chips or hock a big loogie on the battle map to figure out where the spell hits.}"
 											]
 										}

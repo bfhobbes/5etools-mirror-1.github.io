@@ -184,7 +184,7 @@
 				{
 					"name": "Mount",
 					"entries": [
-						"If the archon isn't mounted, it can use a bonus action to magically teleport onto the creature serving as its mount, provided the archon and its mount are on the same plane of existence. When it teleports, the archon appears astride the mount along with any equipment it is wearing or carrying. While mounted and not {@condition incapacitated}, the archon can't be surprised, and both it and its mount gain advantage on Dexterity saving throws. If the archon is reduced to 0 hit points while riding its mount, the mount is reduced to 0 hit points as well."
+						"If the archon isn't mounted, it can use a bonus action to magically teleport onto the creature serving as its mount, provided the archon and its mount are on the same plane of existence. When it teleports, the archon appears astride the mount along with any equipment it is wearing or carrying. While mounted and not {@condition incapacitated}, the archon can't be {@quickref Surprise|PHB|3|0|surprised}, and both it and its mount gain advantage on Dexterity saving throws. If the archon is reduced to 0 hit points while riding its mount, the mount is reduced to 0 hit points as well."
 					]
 				}
 			],
@@ -204,7 +204,7 @@
 				{
 					"name": "Pacifying Presence",
 					"entries": [
-						"Each creature of the archon's choice that the archon can see within 120 feet of it must succeed on a {@dc 18} Wisdom saving throw, or else the target drops any weapons it is holding, ends its concentration on any spells or other effects, and becomes {@condition charmed} by the archon for 1 minute. The {@condition charmed} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the archon's Pacifying Presence for the next 24 hours."
+						"Each creature of the archon's choice that the archon can see within 120 feet of it must succeed on a {@dc 18} Wisdom saving throw, or else the target drops any weapons it is holding, ends its {@status concentration} on any spells or other effects, and becomes {@condition charmed} by the archon for 1 minute. The {@condition charmed} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success. If a creature's saving throw is successful or the effect ends for it, the creature is immune to the archon's Pacifying Presence for the next 24 hours."
 					]
 				}
 			],
@@ -253,6 +253,15 @@
 			],
 			"conditionInflictSpell": [
 				"prone"
+			],
+			"savingThrowForced": [
+				"charisma",
+				"strength",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -374,6 +383,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
+			],
+			"savingThrowForced": [
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -533,6 +545,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"longsword|phb"
+			],
 			"traitTags": [
 				"Legendary Resistances",
 				"Magic Resistance"
@@ -556,6 +571,9 @@
 			],
 			"conditionInflict": [
 				"frightened"
+			],
+			"savingThrowForced": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -654,6 +672,9 @@
 						"The angel chooses up to three creatures it can see within 30 feet of it. Until the end of the angel's next turn, each target can add a {@dice d4} to its attack rolls and saving throws."
 					]
 				}
+			],
+			"attachedItems": [
+				"longsword|phb"
 			],
 			"traitTags": [
 				"Flyby",
@@ -834,6 +855,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"scimitar|phb"
+			],
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -859,6 +883,11 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -978,6 +1007,9 @@
 				"AOE",
 				"MW"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -1084,6 +1116,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"rapier|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -1105,6 +1140,9 @@
 			],
 			"conditionInflict": [
 				"charmed"
+			],
+			"savingThrowForced": [
+				"charisma"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1232,6 +1270,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"longsword|phb",
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Devil's Sight"
 			],
@@ -1263,6 +1305,14 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForced": [
+				"charisma"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1489,6 +1539,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"maul|phb"
+			],
 			"traitTags": [
 				"Legendary Resistances",
 				"Siege Monster"
@@ -1517,8 +1570,14 @@
 				"prone",
 				"stunned"
 			],
+			"savingThrowForced": [
+				"dexterity",
+				"strength",
+				"wisdom"
+			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Cackler",
@@ -1658,6 +1717,12 @@
 			"miscTags": [
 				"MW",
 				"RCH"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1907,6 +1972,9 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"savingThrowForced": [
+				"strength"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -2036,6 +2104,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"longbow|phb"
+			],
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -2072,6 +2143,14 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2170,6 +2249,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"warhammer|phb"
+			],
 			"languageTags": [
 				"C",
 				"X"
@@ -2186,6 +2268,10 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -2266,7 +2352,23 @@
 				{
 					"name": "Counterflux Overcast {@recharge 5}",
 					"entries": [
-						"The blastseeker can create an additional effect immediately after casting a spell. Roll a {@dice d6} to determine the effect: 1-3. The blastseeker creates a 15-foot-radius {@condition invisible} sphere centered on itself that lasts until the end of its next turn. Creatures in the sphere have disadvantage on saving throws against spells and other magical effects. 4-6. The blastseeker creates a 15-foot-radius {@condition invisible} sphere centered on itself that lasts until the end of its next turn. Creatures in the sphere have advantage on saving throws against spells and other magical effects."
+						"The blastseeker can create an additional effect immediately after casting a spell. Roll a {@dice d6} to determine the effect:",
+						{
+							"type": "list",
+							"style": "list-hang-notitle",
+							"items": [
+								{
+									"type": "item",
+									"name": "1\u20133.",
+									"entry": "The blastseeker creates a 15-foot-radius {@condition invisible} sphere centered on itself that lasts until the end of its next turn. Creatures in the sphere have disadvantage on saving throws against spells and other magical effects."
+								},
+								{
+									"type": "item",
+									"name": "4\u20136.",
+									"entry": "The blastseeker creates a 15-foot-radius {@condition invisible} sphere centered on itself that lasts until the end of its next turn. Creatures in the sphere have advantage on saving throws against spells and other magical effects."
+								}
+							]
+						}
 					]
 				}
 			],
@@ -2277,6 +2379,9 @@
 						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"rapier|phb"
 			],
 			"languageTags": [
 				"C",
@@ -2294,6 +2399,9 @@
 			"miscTags": [
 				"AOE",
 				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2463,6 +2571,12 @@
 			"conditionInflictSpell": [
 				"charmed",
 				"prone"
+			],
+			"savingThrowForced": [
+				"charisma"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -2710,6 +2824,14 @@
 				"poisoned",
 				"restrained"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -2856,6 +2978,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
 			"traitTags": [
 				"Siege Monster"
 			],
@@ -2877,6 +3002,11 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3005,6 +3135,9 @@
 			],
 			"conditionInflict": [
 				"prone"
+			],
+			"savingThrowForced": [
+				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3150,6 +3283,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"greatsword|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3169,6 +3305,11 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3296,6 +3437,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"longsword|phb"
+			],
 			"traitTags": [
 				"Flyby",
 				"Magic Resistance"
@@ -3323,6 +3467,10 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -3417,6 +3565,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
 			"languageTags": [
 				"C",
 				"X"
@@ -3436,6 +3587,14 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -3555,6 +3714,9 @@
 				"MW",
 				"RCH"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -3652,6 +3814,9 @@
 			"conditionInflict": [
 				"frightened"
 			],
+			"savingThrowForced": [
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -3744,6 +3909,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"spear|phb"
+			],
 			"languageTags": [
 				"C",
 				"X"
@@ -3758,6 +3926,9 @@
 				"MW",
 				"RW",
 				"THW"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -3860,6 +4031,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"spear|phb"
+			],
 			"languageTags": [
 				"C",
 				"P",
@@ -3882,8 +4056,13 @@
 				"RW",
 				"THW"
 			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity"
+			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Galvanice Weird",
@@ -3977,6 +4156,10 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -4253,6 +4436,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -4282,6 +4468,13 @@
 			"conditionInflictSpell": [
 				"poisoned",
 				"restrained"
+			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -4338,7 +4531,7 @@
 				{
 					"name": "Vigilant",
 					"entries": [
-						"The giant can't be surprised."
+						"The giant can't be {@quickref Surprise|PHB|3|0|surprised}."
 					]
 				}
 			],
@@ -4364,6 +4557,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"spear|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -4381,7 +4577,8 @@
 				"THW"
 			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Horncaller",
@@ -4641,6 +4838,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"javelin|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -4721,7 +4921,7 @@
 				{
 					"name": "Assassinate",
 					"entries": [
-						"During its first turn, the hybrid poisoner has advantage on attack rolls against any creature that hasn't taken a turn. Any hit the hybrid scores against a surprised creature is a critical hit."
+						"During its first turn, the hybrid poisoner has advantage on attack rolls against any creature that hasn't taken a turn. Any hit the hybrid scores against a {@quickref Surprise|PHB|3|0|surprised} creature is a critical hit."
 					]
 				},
 				{
@@ -4755,6 +4955,9 @@
 			],
 			"conditionInflict": [
 				"poisoned"
+			],
+			"savingThrowForced": [
+				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -4933,6 +5136,9 @@
 						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d6 + 3}) piercing damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"shortsword|phb"
 			],
 			"traitTags": [
 				"Spider Climb"
@@ -5317,6 +5523,16 @@
 			"miscTags": [
 				"MW"
 			],
+			"savingThrowForced": [
+				"intelligence",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"dexterity",
+				"strength",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -5592,6 +5808,15 @@
 				"restrained",
 				"unconscious"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"dexterity",
+				"strength"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -5718,6 +5943,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
 			"traitTags": [
 				"Pack Tactics",
 				"Spider Climb"
@@ -5746,6 +5974,9 @@
 			],
 			"conditionInflictSpell": [
 				"poisoned"
+			],
+			"savingThrowForcedSpell": [
+				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -5835,6 +6066,9 @@
 						"Some kraul warriors have a flying speed of 40 feet, as a result of possessing gossamer wings. Their wings give them a higher station among the kraul soldiers. Winged kraul warriors serve the guild as scouts and shock troops."
 					]
 				}
+			],
+			"attachedItems": [
+				"spear|phb"
 			],
 			"traitTags": [
 				"Pack Tactics",
@@ -5981,6 +6215,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
 			"languageTags": [
 				"C",
 				"X"
@@ -5996,6 +6233,10 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -6158,6 +6399,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Legendary Resistances"
 			],
@@ -6188,8 +6432,15 @@
 				"charmed",
 				"incapacitated"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Master of Cruelties",
@@ -6329,6 +6580,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"spear|phb"
+			],
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -6360,6 +6614,12 @@
 			],
 			"conditionInflictSpell": [
 				"charmed"
+			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6515,6 +6775,12 @@
 				"paralyzed",
 				"unconscious"
 			],
+			"savingThrowForced": [
+				"intelligence"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -6615,6 +6881,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"languageTags": [
 				"C",
 				"X"
@@ -6630,6 +6899,9 @@
 				"MW",
 				"RW",
 				"THW"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -6709,7 +6981,7 @@
 				{
 					"name": "Mount",
 					"entries": [
-						"If the specter isn't mounted, it can use a bonus action to magically teleport onto its gloamwing mount, provided the specter and the gloamwing are on the same plane of existence. When it teleports, the specter appears astride the gloamwing along with any equipment it is wearing or carrying. While mounted and not {@condition incapacitated}, the specter can't be surprised, and both it and its mount gain advantage on Dexterity saving throws."
+						"If the specter isn't mounted, it can use a bonus action to magically teleport onto its gloamwing mount, provided the specter and the gloamwing are on the same plane of existence. When it teleports, the specter appears astride the gloamwing along with any equipment it is wearing or carrying. While mounted and not {@condition incapacitated}, the specter can't be {@quickref Surprise|PHB|3|0|surprised}, and both it and its mount gain advantage on Dexterity saving throws."
 					]
 				}
 			],
@@ -6760,6 +7032,10 @@
 			],
 			"conditionInflict": [
 				"stunned"
+			],
+			"savingThrowForced": [
+				"intelligence",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -6939,7 +7215,7 @@
 				{
 					"name": "Locus of the Firemind",
 					"entries": [
-						"Niv-Mizzet can maintain concentration on two different spells at the same time. In addition, he has advantage on saving throws to maintain concentration on spells."
+						"Niv-Mizzet can maintain {@status concentration} on two different spells at the same time. In addition, he has advantage on saving throws to maintain {@status concentration} on spells."
 					]
 				},
 				{
@@ -7062,6 +7338,14 @@
 				"petrified",
 				"restrained",
 				"stunned"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7394,6 +7678,13 @@
 				"HPR",
 				"MW"
 			],
+			"savingThrowForced": [
+				"constitution",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -7472,6 +7763,9 @@
 						"{@atk rw} {@hit 9} to hit, range 60/240 ft., one target. {@h}28 ({@damage 4d10 + 6}) bludgeoning damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"greataxe|phb"
 			],
 			"senseTags": [
 				"D"
@@ -7590,6 +7884,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
 			"senseTags": [
 				"U"
 			],
@@ -7609,6 +7906,12 @@
 			],
 			"conditionInflict": [
 				"stunned"
+			],
+			"savingThrowForced": [
+				"intelligence"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7779,7 +8082,7 @@
 				{
 					"name": "Touch of Pain (Costs 3 Actions)",
 					"entries": [
-						"Rakdos makes a claw attack against one creature within 10 feet of him. The target must succeed on a {@dc 25} Constitution saving throw or be {@condition poisoned} for 1 minute. While {@condition poisoned} in this way, the creature can't maintain concentration on a spell or any other effect that requires concentration. The {@condition poisoned} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
+						"Rakdos makes a claw attack against one creature within 10 feet of him. The target must succeed on a {@dc 25} Constitution saving throw or be {@condition poisoned} for 1 minute. While {@condition poisoned} in this way, the creature can't maintain {@status concentration} on a spell or any other effect that requires {@status concentration}. The {@condition poisoned} creature can repeat the saving throw at the end of each of its turns, ending the effect on itself on a success."
 					]
 				}
 			],
@@ -7815,6 +8118,13 @@
 			"conditionInflict": [
 				"charmed",
 				"poisoned"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -7911,6 +8221,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"club|phb"
+			],
 			"languageTags": [
 				"C",
 				"X"
@@ -7927,6 +8240,11 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"constitution",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -8000,6 +8318,9 @@
 						"{@atk mw,rw} {@hit 5} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}5 ({@damage 1d4 + 3}) piercing damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"dagger|phb"
 			],
 			"actionTags": [
 				"Multiattack"
@@ -8110,6 +8431,9 @@
 				"AOE",
 				"MW",
 				"RCH"
+			],
+			"savingThrowForced": [
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -8314,6 +8638,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"longsword|phb"
+			],
 			"languageTags": [
 				"C",
 				"X"
@@ -8331,6 +8658,10 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -8425,6 +8756,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Ambusher",
 				"Siege Monster"
@@ -8507,6 +8841,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"light hammer|phb"
+			],
 			"languageTags": [
 				"C",
 				"X"
@@ -8520,6 +8857,9 @@
 				"MW",
 				"RW",
 				"THW"
+			],
+			"savingThrowForced": [
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -8716,6 +9056,10 @@
 			"conditionInflict": [
 				"frightened"
 			],
+			"savingThrowForced": [
+				"dexterity",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -8900,6 +9244,12 @@
 				"MW",
 				"RCH"
 			],
+			"savingThrowForced": [
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -9013,6 +9363,9 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
+			],
+			"savingThrowForced": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -9194,6 +9547,9 @@
 				"blinded",
 				"restrained"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -9271,6 +9627,9 @@
 						"{@atk mw} {@hit 3} to hit, reach 5 ft., one target. {@h}6 ({@damage 1d8 + 2}) slashing damage, or 7 ({@damage 1d10 + 2}) slashing damage if used with two hands."
 					]
 				}
+			],
+			"attachedItems": [
+				"longsword|phb"
 			],
 			"actionTags": [
 				"Multiattack"
@@ -9354,6 +9713,11 @@
 			"damageTagsLegendary": [],
 			"damageTagsSpell": [
 				"P"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"strength",
+				"wisdom"
 			],
 			"hasToken": true
 		},
@@ -9471,6 +9835,9 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"savingThrowForced": [
+				"strength"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -9578,6 +9945,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb",
+				"rapier|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -9599,6 +9970,9 @@
 				"MW",
 				"RW",
 				"THW"
+			],
+			"savingThrowForcedSpell": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -9820,6 +10194,13 @@
 				"grappled",
 				"restrained"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -9898,7 +10279,7 @@
 				{
 					"name": "Surprise Attack",
 					"entries": [
-						"During the first round of combat, the medusa has advantage on attack rolls against any creature that is surprised, and it deals an extra 10 ({@dice 3d6}) damage each time it hits such a creature with an attack."
+						"During the first round of combat, the medusa has advantage on attack rolls against any creature that is {@quickref Surprise|PHB|3|0|surprised}, and it deals an extra 10 ({@dice 3d6}) damage each time it hits such a creature with an attack."
 					]
 				}
 			],
@@ -9947,6 +10328,9 @@
 			"conditionInflict": [
 				"petrified",
 				"restrained"
+			],
+			"savingThrowForced": [
+				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -10111,7 +10495,8 @@
 				}
 			],
 			"traitTags": [
-				"Siege Monster"
+				"Siege Monster",
+				"Tunneler"
 			],
 			"senseTags": [
 				"B",
@@ -10133,6 +10518,9 @@
 			"conditionInflict": [
 				"blinded",
 				"restrained"
+			],
+			"savingThrowForced": [
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -10382,6 +10770,16 @@
 				"charmed",
 				"petrified",
 				"restrained"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"strength",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,

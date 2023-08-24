@@ -109,7 +109,10 @@
 							"title": "Map 1.1 Campaign Area",
 							"width": 2625,
 							"height": 1725,
-							"imageType": "map"
+							"imageType": "map",
+							"grid": {
+								"type": "none"
+							}
 						},
 						{
 							"type": "entries",
@@ -147,7 +150,7 @@
 					"page": 82,
 					"id": "00b",
 					"entries": [
-						"Before diving headlong into the events of \"The Orrery of the Wanderer\" campaign, you might wish to spend some time having the characters experience and explore the city of Waterdeep. The adventure {@adventure Waterdeep: Dragon Heist|WDH} and the \"Volo's Waterdeep Enchiridion\" section of that book (available at the DMs Guild as a separate download\u2014{@link www.dmsguild.com|http://www.dmsguild.com}) provide a ton of information about the City of Splendors.",
+						"Before diving headlong into the events of \"The Orrery of the Wanderer\" campaign, you might wish to spend some time having the characters experience and explore the city of Waterdeep. The adventure {@adventure Waterdeep: Dragon Heist|WDH} and the \"Volo's Waterdeep Enchiridion\" section of that book (available at the DMs Guild as a separate download\u2014{@link www.dmsguild.com|https://www.dmsguild.com}) provide a ton of information about the City of Splendors.",
 						"Additionally, you can make use of the following rumors that characters might hear on the streets or in the taverns of that great metropolis. Some of these rumors tie to the adventure, while the truth of others depends on your wishes for the campaign. Either way, feel free to use these rumors as inspiration for new encounters or side treks.",
 						{
 							"type": "list",
@@ -544,6 +547,13 @@
 									"width": 3000,
 									"height": 2000,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 92,
+										"offsetX": -34,
+										"offsetY": -14,
+										"scale": 2
+									},
 									"id": "328",
 									"mapRegions": [
 										{
@@ -642,10 +652,17 @@
 										"type": "internal",
 										"path": "adventure/OoW/045-map-1-2-pc.jpg"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"width": 3000,
 									"height": 2000,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 91,
+										"offsetX": -8,
+										"offsetY": 7,
+										"scale": 2
+									},
 									"mapParent": {
 										"id": "328"
 									}
@@ -677,7 +694,7 @@
 											"page": 88,
 											"id": "02c",
 											"entries": [
-												"After the first character has been at the bottom of the fissure for 2 rounds, a group of six {@creature Giant Rat||giant rats} notices the potential feast. Any character at the bottom of the fissure who succeeds on a DC 12 Wisdom ({@skill Perception}) check can hear the approaching rats, and isn't surprised when three rats emerge from cracks in the walls and attack. Three more rats arrive and attack 1 round later. All the rats are dyed a bright green from trap C in {@area area 3|03a|x}."
+												"After the first character has been at the bottom of the fissure for 2 rounds, a group of six {@creature Giant Rat||giant rats} notices the potential feast. Any character at the bottom of the fissure who succeeds on a DC 12 Wisdom ({@skill Perception}) check can hear the approaching rats, and isn't {@quickref Surprise|PHB|3|0|surprised} when three rats emerge from cracks in the walls and attack. Three more rats arrive and attack 1 round later. All the rats are dyed a bright green from trap C in {@area area 3|03a|x}."
 											]
 										},
 										{
@@ -971,7 +988,7 @@
 											"page": 91,
 											"id": "04b",
 											"entries": [
-												"The {@creature giant spider} hides in a dust-filled depression in the floor. A successful DC 17 Wisdom ({@skill Perception}) check spots the arachnid before it springs from its hiding place to attack. Any characters who are focused on the webs above them have disadvantage on the check. Those who fail the check are surprised.",
+												"The {@creature giant spider} hides in a dust-filled depression in the floor. A successful DC 17 Wisdom ({@skill Perception}) check spots the arachnid before it springs from its hiding place to attack. Any characters who are focused on the webs above them have disadvantage on the check. Those who fail the check are {@quickref Surprise|PHB|3|0|surprised}.",
 												"The giant spider initially favors its web attack, hoping to restrain a couple of characters before it starts biting. If reduced to 10 hit points or fewer, the spider retreats into a nearby narrow fissure. However, it attacks again when the characters come back through this area."
 											]
 										},
@@ -991,10 +1008,17 @@
 																"type": "internal",
 																"path": "adventure/OoW/047-map-1-3-dm.jpg"
 															},
-															"title": "Map 1.3: Areas 6-10",
+															"title": "Map 1.3: Areas 6\u201310",
 															"width": 3000,
 															"height": 2000,
 															"imageType": "map",
+															"grid": {
+																"type": "square",
+																"size": 78,
+																"offsetX": -5,
+																"offsetY": 30,
+																"scale": 2
+															},
 															"id": "329",
 															"mapRegions": [
 																{
@@ -1122,10 +1146,17 @@
 																"type": "internal",
 																"path": "adventure/OoW/048-map-1-3-pc.jpg"
 															},
-															"title": "(Player Version)",
+															"title": "Player Version",
 															"width": 3000,
 															"height": 2000,
 															"imageType": "mapPlayer",
+															"grid": {
+																"type": "square",
+																"size": 78,
+																"offsetX": -5,
+																"offsetY": 28,
+																"scale": 2
+															},
 															"mapParent": {
 																"id": "329"
 															}
@@ -1843,7 +1874,7 @@
 											"page": 101,
 											"id": "08a",
 											"entries": [
-												"The two dead horses are {@creature Warhorse Skeleton||warhorse skeletons} whose remaining flesh sloughs off as they fight. When any character comes within 20 feet of the fallen horses, these undead lurch to their feet and attack. When this happens, each character must succeed on a DC 15 Wisdom ({@skill Perception}) check or be surprised."
+												"The two dead horses are {@creature Warhorse Skeleton||warhorse skeletons} whose remaining flesh sloughs off as they fight. When any character comes within 20 feet of the fallen horses, these undead lurch to their feet and attack. When this happens, each character must succeed on a DC 15 Wisdom ({@skill Perception}) check or be {@quickref Surprise|PHB|3|0|surprised}."
 											]
 										},
 										{
@@ -1951,6 +1982,11 @@
 													"width": 2625,
 													"height": 1725,
 													"imageType": "map",
+													"grid": {
+														"type": "none",
+														"size": 107,
+														"distance": 50
+													},
 													"mapRegions": [
 														{
 															"area": "0bd",
@@ -2251,7 +2287,7 @@
 														"type": "internal",
 														"path": "adventure/OoW/thumbnail/053-map-2-1-dm.webp"
 													},
-													"id": "328"
+													"id": "32e"
 												}
 											]
 										}
@@ -2886,6 +2922,12 @@
 									"width": 2625,
 									"height": 1725,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 80,
+										"offsetX": 34,
+										"offsetY": 8
+									},
 									"id": "32a",
 									"mapRegions": [
 										{
@@ -3580,10 +3622,16 @@
 										"type": "internal",
 										"path": "adventure/OoW/059-map-2-2-pc.jpg"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"width": 2625,
 									"height": 1725,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 80,
+										"offsetX": 34,
+										"offsetY": 8
+									},
 									"mapParent": {
 										"id": "32a"
 									}
@@ -4822,6 +4870,12 @@
 									"width": 2700,
 									"height": 1800,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 61,
+										"offsetX": 22,
+										"offsetY": 34
+									},
 									"id": "32b"
 								},
 								{
@@ -4830,10 +4884,16 @@
 										"type": "internal",
 										"path": "adventure/OoW/063-map-3-1-pc.jpg"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"width": 2700,
 									"height": 1800,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 61,
+										"offsetX": 22,
+										"offsetY": 34
+									},
 									"mapParent": {
 										"id": "32b"
 									}
@@ -5246,6 +5306,13 @@
 									"width": 1200,
 									"height": 1516,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 82,
+										"offsetX": 33,
+										"offsetY": 28,
+										"scale": 2
+									},
 									"id": "32c",
 									"mapRegions": [
 										{
@@ -5384,10 +5451,17 @@
 										"type": "internal",
 										"path": "adventure/OoW/067-map-3-2-pc.jpg"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"width": 1200,
 									"height": 1516,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 82,
+										"offsetX": 33,
+										"offsetY": 26,
+										"scale": 2
+									},
 									"mapParent": {
 										"id": "32c"
 									}
@@ -6309,7 +6383,13 @@
 							"title": "Map 4.1: The Docks",
 							"width": 1200,
 							"height": 1516,
-							"imageType": "map"
+							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 63,
+								"offsetX": 27,
+								"offsetY": -5
+							}
 						},
 						{
 							"type": "entries",
@@ -6793,7 +6873,13 @@
 											"title": "Map 4.2: Pirate Fight",
 											"width": 1215,
 											"height": 1553,
-											"imageType": "map"
+											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 56,
+												"offsetX": 10,
+												"offsetY": 22
+											}
 										},
 										{
 											"type": "insetReadaloud",
@@ -6879,6 +6965,11 @@
 											"width": 1215,
 											"height": 1553,
 											"imageType": "map",
+											"grid": {
+												"type": "square",
+												"size": 65,
+												"offsetY": 38
+											},
 											"mapRegions": [
 												{
 													"area": "1ef",
@@ -6906,7 +6997,7 @@
 												"type": "internal",
 												"path": "adventure/OoW/thumbnail/077-map-4-3-dm.webp"
 											},
-											"id": "329"
+											"id": "32f"
 										},
 										"Read the following, making adjustments as necessary if the characters have already seen the Six operatives:",
 										{
@@ -7060,7 +7151,7 @@
 									"page": 151,
 									"id": "1f5",
 									"entries": [
-										"If the party arrives at the same time as the Six, roll initiative! Szorrulax prioritizes killing Bracus during the fight, forcing the characters to try to save the Dran Enterprises employee. If Bracus is killed, Szorrulax flees with his {@item Living Loot Satchel|AI|living loot satchel} and the orrery components at once. If the characters save Bracus, defeat the Six operatives, and force Szorrulax to flee, they gain the components and the information noted above. If Bracus dies, they might still find a valuable book and some treasure, as described below."
+										"If the party arrives at the same time as the Six, roll initiative! Szorrulax prioritizes killing Bracus during the fight, forcing the characters to try to save the Dran Enterprises employee. If Bracus is killed, Szorrulax flees with his {@item living loot satchel|AI} and the orrery components at once. If the characters save Bracus, defeat the Six operatives, and force Szorrulax to flee, they gain the components and the information noted above. If Bracus dies, they might still find a valuable book and some treasure, as described below."
 									]
 								},
 								{
@@ -7069,7 +7160,7 @@
 									"page": 151,
 									"id": "1f6",
 									"entries": [
-										"If the Six operatives arrive at the headquarters first, Szorrulax easily defeats and kills Bracus. When the characters arrive, Szorrulax is claiming Dran Enterprises' two components, having destroyed the lizardfolk's {@item Living Loot Satchel|AI|living loot satchel} to empty its contents. Roll for initiative, but Szorrulax's first act is to {@spell plane shift} away.",
+										"If the Six operatives arrive at the headquarters first, Szorrulax easily defeats and kills Bracus. When the characters arrive, Szorrulax is claiming Dran Enterprises' two components, having destroyed the lizardfolk's {@item living loot satchel|AI} to empty its contents. Roll for initiative, but Szorrulax's first act is to {@spell plane shift} away.",
 										"All is not lost, though. Once the characters defeat the remaining foes, they can investigate the cabin. In the spilled contents of Bracus's satchel, they find a book entitled {@i Great Dwarven Halls}, with a page turned down. It mentions the dwarves of Horn Enclave as being noted for their work of securing items of great value. Written in the margin is the note: \"The wheel of stars, hidden by its creator.\" They also find the treasure noted below, since Szorrulax doesn't have the time to take it.",
 										{
 											"type": "image",
@@ -7482,6 +7573,13 @@
 							"width": 1215,
 							"height": 1553,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 64,
+								"offsetX": 39,
+								"offsetY": 24,
+								"scale": 3
+							},
 							"mapRegions": [
 								{
 									"area": "21b",
@@ -7509,7 +7607,7 @@
 								"type": "internal",
 								"path": "adventure/OoW/thumbnail/081-map-5-1-dm.webp"
 							},
-							"id": "32a"
+							"id": "330"
 						},
 						{
 							"type": "entries",
@@ -8374,7 +8472,7 @@
 								"Dropping out from behind a dark cloud is an airship held aloft by a large balloon\u2014emblazoned with the sigil of the Six! A crew of hobgoblins and goblins can be seen swarming the deck, and a ballista and three harpoon guns are trained on your vessel. To arms!"
 							]
 						},
-						"If the {@vehicle battle balloon|AI} took more than 20 damage, the chaos of the storm has distracted the characters and crew. In that event, all creatures on the characters' battle balloon are surprised by the airship sent by the Six to engage the franchise\u2014and to steal the franchise's orrery components. Use the battle balloon stat block from {@book appendix C|AI|5} for the Six's airship, but substitute the following Blowout Ballista attack for the Green Flame Arbalester attack:",
+						"If the {@vehicle battle balloon|AI} took more than 20 damage, the chaos of the storm has distracted the characters and crew. In that event, all creatures on the characters' battle balloon are {@quickref Surprise|PHB|3|0|surprised} by the airship sent by the Six to engage the franchise\u2014and to steal the franchise's orrery components. Use the battle balloon stat block from {@book appendix C|AI|5} for the Six's airship, but substitute the following Blowout Ballista attack for the Green Flame Arbalester attack:",
 						"{@i Ranged Weapon Attack}: +8 to hit, range 200/800 ft. (can't hit targets within 60 ft. of it), one target. {@i Hit}: 16 ({@dice 3d10}) piercing damage and 22 ({@dice 4d10}) fire damage.",
 						"The airship's crew is made up of a female {@creature hobgoblin captain} named Garla, six {@creature Hobgoblin||hobgoblins}, six {@creature Goblin||goblins}, six {@creature Smoke Mephit||smoke mephits}, and a {@creature hippogriff} (serving as the captain's mount). All these creatures are recent mercenary hires, so none of them have the iconic affiliate of the Six features. They employ the following strategy, hoping to distract the characters while they steal the orrery housing and as many of its components as they can.",
 						{
@@ -8578,6 +8676,12 @@
 							"width": 1148,
 							"height": 1466,
 							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 51,
+								"offsetX": 7,
+								"offsetY": 10
+							},
 							"mapRegions": [
 								{
 									"area": "28b",
@@ -8996,7 +9100,7 @@
 								"type": "internal",
 								"path": "adventure/OoW/thumbnail/085-map-5-2-dm.webp"
 							},
-							"id": "32b"
+							"id": "331"
 						},
 						{
 							"type": "entries",
@@ -9678,6 +9782,12 @@
 									"width": 3000,
 									"height": 1971,
 									"imageType": "map",
+									"grid": {
+										"type": "square",
+										"size": 98,
+										"offsetX": -32,
+										"offsetY": 20
+									},
 									"id": "32d",
 									"mapRegions": [
 										{
@@ -9880,10 +9990,16 @@
 										"type": "internal",
 										"path": "adventure/OoW/091-map-6-1-pc.jpg"
 									},
-									"title": "(Player Version)",
+									"title": "Player Version",
 									"width": 3000,
 									"height": 1971,
 									"imageType": "mapPlayer",
+									"grid": {
+										"type": "square",
+										"size": 98,
+										"offsetX": -32,
+										"offsetY": 20
+									},
 									"mapParent": {
 										"id": "32d"
 									}
@@ -10816,7 +10932,13 @@
 							"title": "Map 6.2: Ritual Site",
 							"width": 1350,
 							"height": 1725,
-							"imageType": "map"
+							"imageType": "map",
+							"grid": {
+								"type": "square",
+								"size": 59,
+								"offsetX": 47,
+								"offsetY": 38
+							}
 						},
 						{
 							"type": "entries",

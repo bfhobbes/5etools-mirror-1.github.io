@@ -98,6 +98,15 @@
 						}
 					]
 				}
+			],
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/WDMM/041-13-01.png"
+					}
+				}
 			]
 		},
 		{
@@ -753,6 +762,19 @@
 					"href": {
 						"type": "internal",
 						"path": "bestiary/WDMM/Trobriand.jpg"
+					}
+				}
+			]
+		},
+		{
+			"name": "Umbraxakar",
+			"source": "WDMM",
+			"images": [
+				{
+					"type": "image",
+					"href": {
+						"type": "internal",
+						"path": "bestiary/WDMM/Umbraxakar.jpg"
 					}
 				}
 			]

@@ -199,6 +199,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"maul|phb"
+			],
 			"traitTags": [
 				"Charge"
 			],
@@ -450,6 +453,9 @@
 						"{@atk mw} {@hitYourSpellAttack} to hit, reach 5 ft., one target. {@h}{@damage 1d8 + 4 + summonSpellLevel} piercing damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"maul|phb"
 			],
 			"traitTags": [
 				"Flyby",
@@ -971,6 +977,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"shortsword|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -1461,6 +1470,9 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
@@ -1603,7 +1615,8 @@
 			"conditionInflict": [
 				"frightened"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Steel Defender",
@@ -1668,7 +1681,7 @@
 				{
 					"name": "Vigilant",
 					"entries": [
-						"The defender can't be surprised."
+						"The defender can't be {@quickref Surprise|PHB|3|0|surprised}."
 					]
 				}
 			],

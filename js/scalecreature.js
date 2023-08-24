@@ -1,7 +1,7 @@
 "use strict";
 
 // Global variable for Roll20 compatibility
-(typeof module !== "undefined" ? global : window).ScaleCreature = {
+globalThis.ScaleCreature = {
 	isCrInScaleRange (mon) {
 		if ([VeCt.CR_UNKNOWN, VeCt.CR_CUSTOM].includes(Parser.crToNumber(mon.cr))) return false;
 		// Only allow scaling for creatures in the 0-30 CR range (homebrew may specify e.g. >30)
@@ -304,7 +304,7 @@
 		if (toCr == null || toCr === "Unknown") throw new Error("Attempting to scale unknown CR!");
 
 		this._initRng(mon, toCr);
-		mon = MiscUtil.copy(mon);
+		mon = MiscUtil.copyFast(mon);
 
 		const crIn = mon.cr.cr || mon.cr;
 		const crInNumber = Parser.crToNumber(crIn);
@@ -448,11 +448,11 @@
 			const out = [];
 			for (let i = 0; i < 3; ++i) {
 				out.push({
-					tag: `${item} +${i + 1}|dmg`,
+					tag: `+${i + 1} ${item}|dmg`,
 					mod: baseMod + i + 1,
 				});
 				out.push({
-					tag: `+${i + 1} ${item}|dmg`,
+					tag: `${item} +${i + 1}|dmg`,
 					mod: baseMod + i + 1,
 				});
 			}
@@ -518,6 +518,10 @@
 			const ix = [this._HEAVY, this._MEDIUM, this._LIGHT].findIndex(tc => !!Object.keys(tc).find(k => name === k));
 			return ix === 0 ? 0 : ix === 1 ? 2 : ix === 3 ? 999 : null;
 		},
+
+		// dual-wield shields is 3 AC, according to VGM's Fire Giant Dreadnought
+		// Therefore we assume "two shields = +1 AC"
+		_DUAL_SHIELD_BONUS: 1,
 
 		_HEAVY: {
 			"ring mail": 14,
@@ -666,7 +670,14 @@
 			if (acItem._miscOffset != null) acItem.ac += acItem._miscOffset;
 
 			// cleanup
-			["_enchTotal", "_gearBonus", "_dexCap", "_miscOffset"].forEach(it => delete acItem[it]);
+			[
+				"_enchTotal",
+				"_gearBonus",
+				"_dexCap",
+				"_miscOffset",
+				"_isShield",
+				"_isDualShields",
+			].forEach(it => delete acItem[it]);
 			// endregion
 
 			return out;
@@ -808,8 +819,6 @@
 
 			const handleShield = () => {
 				// if there's a shield, try dropping it
-				const DUAL_SHIELD_AC = 3; // dual-wield shields is 3 AC, according to VGM's Fire Giant Dreadnought
-
 				if (acItem.from) {
 					const fromShields = acItem.from.filter(f => this._ALL_SHIELD_VARIANTS.find(s => f._.includes(`@item ${s.tag}`)));
 					if (fromShields.length) {
@@ -834,20 +843,26 @@
 						})();
 						mon._shieldDropped = false;
 
-						const fromShield = fromShields[0]._;
-						const idx = acItem.from.findIndex(it => it === fromShield);
+						const fromShield = fromShields[0];
+						const fromShieldStr = fromShield._;
+						fromShield._isShield = true;
+						const idx = acItem.from.findIndex(it => it === fromShieldStr);
 
-						if (fromShield.endsWith("|shields}")) {
-							targetNoShield -= DUAL_SHIELD_AC;
+						if (fromShieldStr.endsWith("|shields}")) {
+							fromShield._isDualShields = true;
 
-							if (!shieldRequired && (acGain <= -DUAL_SHIELD_AC)) {
+							const shieldVal = this._ALL_SHIELD_VARIANTS.find(s => fromShieldStr.includes(s.tag));
+							const shieldValModDual = shieldVal.mod + this._DUAL_SHIELD_BONUS;
+							targetNoShield -= shieldValModDual;
+
+							if (!shieldRequired && (acGain <= -shieldValModDual)) {
 								acItem.from.splice(idx, 1);
-								acItem.ac -= DUAL_SHIELD_AC;
+								acItem.ac -= shieldValModDual;
 								mon._shieldDropped = true;
 								if (acItem.ac === target) return true;
 							}
 						} else {
-							const shieldVal = this._ALL_SHIELD_VARIANTS.find(s => fromShield.includes(s.tag));
+							const shieldVal = this._ALL_SHIELD_VARIANTS.find(s => fromShieldStr.includes(s.tag));
 							targetNoShield -= shieldVal.mod;
 
 							if (!shieldRequired && (acGain <= -shieldVal.mod)) {
@@ -881,20 +896,52 @@
 					const nonEnch = Object.keys(this._HEAVY).find(armor => this._HEAVY[armor] === ac);
 					if (nonEnch) return `${nonEnch}|phb`;
 					switch (ac) {
-						case 19:
-							return [`+1 plate armor|dmg`, `+2 splint armor|dmg`][RollerUtil.roll(1, ScaleCreature._rng)];
-						case 20:
-							return `+2 plate armor|dmg`;
-						case PL3_PLATE:
-							return `+3 plate armor|dmg`;
+						case 19: return [`+1 plate armor|dmg`, `+2 splint armor|dmg`][RollerUtil.roll(1, ScaleCreature._rng)];
+						case 20: return `+2 plate armor|dmg`;
+						case PL3_PLATE: return `+3 plate armor|dmg`;
 					}
+				};
+
+				const applyPl3Plate = ({ixFrom, heavyTag}) => {
+					acItem.from[ixFrom]._ = this._replaceTag(acItem.from[ixFrom]._, heavyTag, getHeavy(PL3_PLATE));
+					acItem.ac = PL3_PLATE;
+					delete acItem._acBeforePreAdjustment;
+				};
+
+				// For e.g. "Helmed Horror". Note that this should only ever *increase* shield AC.
+				const applyBeyondHeavyShieldUpgrade = ({idealShieldAc}) => {
+					const fromShield = acItem.from.find(it => it._isShield);
+					const shieldVal = this._ALL_SHIELD_VARIANTS.find(s => fromShield._.includes(s.tag));
+					const adjustmentDualShields = (fromShield._isDualShields ? this._DUAL_SHIELD_BONUS : 0);
+					const shieldValMod = shieldVal.mod + adjustmentDualShields;
+					const deltaShieldRequired = idealShieldAc - shieldValMod;
+					if (deltaShieldRequired <= 0) return acItem.ac += shieldValMod;
+
+					const deltaShieldMax = (5 + adjustmentDualShields) - shieldValMod;
+					const deltaShield = Math.min(deltaShieldRequired, deltaShieldMax);
+					const shieldValOut = this._ALL_SHIELD_VARIANTS.find(s => s.mod === (shieldVal.mod + deltaShield));
+
+					fromShield._ = this._replaceTag(fromShield._, shieldVal.tag, shieldValOut.tag);
+
+					acItem.ac += shieldValOut.mod + adjustmentDualShields;
 				};
 
 				if (acItem.from) {
 					for (let i = 0; i < acItem.from.length; ++i) {
 						const heavyTag = this._isStringContainsTag(heavyTags, acItem.from[i]._);
 						if (heavyTag) {
-							if (isHeavy(targetNoShield)) {
+							if (
+								targetNoShield !== target
+								&& isBeyondHeavy(targetNoShield)
+								&& isBeyondHeavy(target)
+							) {
+								const deltaHeavy = (PL3_PLATE - 10) - acItem.from[i]._gearBonus;
+								const idealShieldAc = target - (targetNoShield - deltaHeavy);
+
+								applyPl3Plate({ixFrom: i, heavyTag}); // cap it at +3 plate
+								applyBeyondHeavyShieldUpgrade({idealShieldAc}); // try to upgrade the shield
+								return true;
+							} if (isHeavy(targetNoShield)) {
 								const bumpOne = targetNoShield === 15; // there's no heavy armor with 15 AC
 								if (bumpOne) targetNoShield++;
 								acItem.from[i]._ = this._replaceTag(acItem.from[i]._, heavyTag, getHeavy(targetNoShield));
@@ -908,11 +955,8 @@
 								delete acItem._acBeforePreAdjustment;
 								this._dropShield(acItem);
 								return true;
-							} else if (isBeyondHeavy(targetNoShield)) { // cap it at +3 plate and call it a day
-								const max = PL3_PLATE;
-								acItem.from[i]._ = this._replaceTag(acItem.from[i]._, heavyTag, getHeavy(max));
-								acItem.ac = max;
-								delete acItem._acBeforePreAdjustment;
+							} else if (isBeyondHeavy(targetNoShield)) {
+								applyPl3Plate({ixFrom: i, heavyTag}); // cap it at +3 plate and call it a day
 								return true;
 							} else { // drop to medium
 								const [tagBase, tagMod] = this._getAcBaseAndMod(this._LIGHT, heavyTag);
@@ -1701,7 +1745,13 @@
 							});
 						};
 
-						const getDiceExp = (a = numDiceOut, b = diceFacesOut, c = modOut) => `${a}d${b}${c !== 0 ? ` ${c > 0 ? "+" : ""} ${c}` : ""}`;
+						const getDiceExp = (a = numDiceOut, b = diceFacesOut, c = modOut) => {
+							const ptDice = b === 1
+								? ((a || 1) * b)
+								: `${a}d${b}`;
+							const ptMod = `${c !== 0 ? ` ${c > 0 ? "+" : ""} ${c}` : ""}`;
+							return `${ptDice}${ptMod}`;
+						};
 						let loops = 0;
 						while (1) {
 							if (inRange(getAvgDpr(getDiceExp()))) break;
@@ -1743,14 +1793,16 @@
 							};
 
 							const tryAdjustDiceFaces = () => {
-								if (diceFaces === 4 || diceFaces === 20) return; // can't be scaled
+								if (diceFaces === 1 || diceFaces === 20) return; // can't be scaled
 								let diceFacesTemp = diceFaces;
 								let tempAvgDpr = getAvgDpr(getDiceExp(undefined, diceFacesTemp));
 								let found = false;
 
 								if (adjustedDpr < tempAvgDpr) {
-									while (diceFacesTemp > 4 && tempAvgDpr >= targetDprRange[0]) {
-										diceFacesTemp = Renderer.dice.getPreviousDice(diceFacesTemp);
+									while (diceFacesTemp > 1 && tempAvgDpr >= targetDprRange[0]) {
+										diceFacesTemp = diceFacesTemp === 4
+											? 1
+											: Renderer.dice.getPreviousDice(diceFacesTemp);
 										tempAvgDpr = getAvgDpr(getDiceExp(undefined, diceFacesTemp));
 
 										if (inRange(getAvgDpr(getDiceExp(numDice, diceFacesTemp, modOut)))) {
@@ -1813,7 +1865,7 @@
 						doPostCalc();
 						const diceExpOut = getDiceExp(undefined, undefined, modOut + offsetEnchant);
 						const avgDamOut = Math.floor(getAvgDpr(diceExpOut));
-						if (avgDamOut <= 0) return `1 ${suffix.replace(/^[^\w]+/, " ").replace(/ +/, " ")}`;
+						if (avgDamOut <= 0 || diceExpOut === "1") return `1 ${suffix.replace(/^[^\w]+/, " ").replace(/ +/, " ")}`;
 						return `${Math.floor(getAvgDpr(diceExpOut))}${prefix}${diceExpOut}${suffix}`;
 					});
 
@@ -1929,12 +1981,13 @@
 	},
 
 	_spells: null,
-	_pInitSpellCache () {
+	async _pInitSpellCache () {
 		if (this._spells) return Promise.resolve();
 
 		this._spells = {};
-		return DataUtil.loadJSON(`${Renderer.get().baseUrl}data/spells/spells-phb.json`).then(data => {
-			this.__initSpellCache(data);
+
+		this.__initSpellCache({
+			spell: (await DataUtil.spell.loadJSON()).spell.filter(sp => sp.source === Parser.SRC_PHB),
 		});
 	},
 
@@ -1997,7 +2050,7 @@
 					} else return m[0];
 				});
 
-				const mClasses = /(artificer|bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard) spell(?:s)?/i.exec(outStr);
+				const mClasses = /(artificer|bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard) spells?/i.exec(outStr);
 				if (mClasses) spellsFromClass = mClasses[1];
 				else {
 					const mClasses2 = /(artificer|bard|cleric|druid|paladin|ranger|sorcerer|warlock|wizard)(?:'s)? spell list/i.exec(outStr);
@@ -2032,7 +2085,7 @@
 					const targetCantripCount = this._getScaledToRatio(curCantrips, idealCantripsIn, idealCantripsOut);
 
 					if (curCantrips < targetCantripCount) {
-						const cantrips = Object.keys((this._spells[SRC_PHB][spellsFromClass.toLowerCase()] || {})[0]).map(it => it.toLowerCase());
+						const cantrips = Object.keys((this._spells[Parser.SRC_PHB][spellsFromClass.toLowerCase()] || {})[0]).map(it => it.toLowerCase());
 						if (cantrips.length) {
 							const extraCantrips = [];
 							const numNew = Math.min(targetCantripCount - curCantrips, cantrips.length);
@@ -2065,7 +2118,7 @@
 					}
 
 					const numSpellsKnown = this._adjustSpellcasting_getWarlockNumSpellsKnown(primaryOutLevel);
-					const warlockSpells = this._spells[SRC_PHB].warlock;
+					const warlockSpells = this._spells[Parser.SRC_PHB].warlock;
 					let spellList = [];
 					for (let i = 1; i < maxSpellLevel + 1; ++i) {
 						spellList = spellList.concat(Object.keys(warlockSpells[i]).map(sp => sp.toSpellCase()));
@@ -2105,9 +2158,9 @@
 							}
 						} else if (i <= maxSpellLevel) {
 							const slots = Math.max(1, Math.round(idealSlotsOut * lastRatio));
-							if (spellsFromClass && (this._spells[SRC_PHB][spellsFromClass.toLowerCase()] || {})[i]) {
+							if (spellsFromClass && (this._spells[Parser.SRC_PHB][spellsFromClass.toLowerCase()] || {})[i]) {
 								const examples = [];
-								const levelSpells = Object.keys(this._spells[SRC_PHB][spellsFromClass.toLowerCase()][i]).map(it => it.toSpellCase());
+								const levelSpells = Object.keys(this._spells[Parser.SRC_PHB][spellsFromClass.toLowerCase()][i]).map(it => it.toSpellCase());
 								const numExamples = Math.min(5, levelSpells.length);
 								for (let n = 0; n < numExamples; ++n) {
 									const ix = RollerUtil.roll(levelSpells.length, this._rng);
@@ -2152,7 +2205,7 @@
 						const m = /{@spell ([^|}]+)(?:\|([^|}]+))?[|}]/.exec(it);
 						if (m) {
 							const nameTag = m[1].toLowerCase();
-							const srcTag = (m[2] || SRC_PHB).toLowerCase();
+							const srcTag = (m[2] || Parser.SRC_PHB).toLowerCase();
 
 							const src = Object.keys(this._spells).find(it => it.toLowerCase() === srcTag);
 							if (src) {
@@ -2175,7 +2228,7 @@
 					sc.daily["1e"] = curSpells.map(it => it.original);
 				} else {
 					for (let i = 5 + curNumSpells; i < 5 + numArcanum; ++i) {
-						const rollOn = Object.keys(this._spells[SRC_PHB].warlock[i]);
+						const rollOn = Object.keys(this._spells[Parser.SRC_PHB].warlock[i]);
 						const ix = RollerUtil.roll(rollOn.length, this._rng);
 						sc.daily["1e"].push(`{@spell ${rollOn[ix].toSpellCase()}}`);
 					}
@@ -2205,7 +2258,7 @@
 	},
 };
 
-(typeof module !== "undefined" ? global : window).ScaleSummonedCreature = {
+globalThis.ScaleSummonedCreature = {
 	_mutSimpleSpecialAcItem (acItem) {
 		// Try to convert to "from" AC
 		const mSimpleNatural = /^(\d+) \(natural armor\)$/i.exec(acItem.special);
@@ -2234,13 +2287,13 @@
 	},
 };
 
-(typeof module !== "undefined" ? global : window).ScaleSpellSummonedCreature = {
+globalThis.ScaleSpellSummonedCreature = {
 	async scale (mon, toSpellLevel) {
-		mon = MiscUtil.copy(mon);
+		mon = MiscUtil.copyFast(mon);
 
 		if (!mon.summonedBySpell || mon.summonedBySpellLevel == null) return mon;
 
-		ScaleSpellSummonedCreature._WALKER = ScaleSpellSummonedCreature._WALKER || MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+		ScaleSpellSummonedCreature._WALKER = ScaleSpellSummonedCreature._WALKER || MiscUtil.getWalker({keyBlocklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLOCKLIST});
 
 		const state = new ScaleSpellSummonedCreature.State({});
 
@@ -2251,6 +2304,7 @@
 
 		this._scale_traits(mon, toSpellLevel, state);
 		this._scale_actions(mon, toSpellLevel, state);
+		this._scale_bonusActions(mon, toSpellLevel, state);
 		this._scale_reactions(mon, toSpellLevel, state);
 
 		mon._summonedBySpell_level = toSpellLevel;
@@ -2324,6 +2378,7 @@
 
 	_scale_traits (mon, toSpellLevel, state) { this._scale_genericEntries(mon, toSpellLevel, state, "trait"); },
 	_scale_actions (mon, toSpellLevel, state) { this._scale_genericEntries(mon, toSpellLevel, state, "action"); },
+	_scale_bonusActions (mon, toSpellLevel, state) { this._scale_genericEntries(mon, toSpellLevel, state, "bonus"); },
 	_scale_reactions (mon, toSpellLevel, state) { this._scale_genericEntries(mon, toSpellLevel, state, "reaction"); },
 
 	State: function () {
@@ -2334,13 +2389,13 @@
 	_WALKER: null,
 };
 
-(typeof module !== "undefined" ? global : window).ScaleClassSummonedCreature = {
+globalThis.ScaleClassSummonedCreature = {
 	async scale (mon, toClassLevel) {
-		mon = MiscUtil.copy(mon);
+		mon = MiscUtil.copyFast(mon);
 
 		if (!mon.summonedByClass || toClassLevel < 1) return mon;
 
-		ScaleClassSummonedCreature._WALKER = ScaleClassSummonedCreature._WALKER || MiscUtil.getWalker({keyBlacklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLACKLIST});
+		ScaleClassSummonedCreature._WALKER = ScaleClassSummonedCreature._WALKER || MiscUtil.getWalker({keyBlocklist: MiscUtil.GENERIC_WALKER_ENTRIES_KEY_BLOCKLIST});
 
 		const className = mon.summonedByClass.split("|")[0].toTitleCase();
 		const state = new ScaleClassSummonedCreature.State({
@@ -2353,10 +2408,14 @@
 		this._scale_ac(mon, toClassLevel, state);
 		this._scale_hp(mon, toClassLevel, state);
 
+		this._scale_saves(mon, toClassLevel, state);
+		this._scale_skills(mon, toClassLevel, state);
+
 		this._scale_pbNote(mon, toClassLevel, state);
 
 		this._scale_traits(mon, toClassLevel, state);
 		this._scale_actions(mon, toClassLevel, state);
+		this._scale_bonusActions(mon, toClassLevel, state);
 		this._scale_reactions(mon, toClassLevel, state);
 
 		mon._summonedByClass_level = toClassLevel;
@@ -2374,13 +2433,74 @@
 
 			it.special = it.special
 				// "13 + PB (natural armor)"
-				.replace(/(\d+)\s*\+\s*PB\b/g, (...m) => Number(m[1]) + state.proficiencyBonus)
+				// "13 plus PB (natural armor)"
+				.replace(/(\d+)\s*(\+|plus)\s*PB\b/g, (...m) => Number(m[1]) + state.proficiencyBonus)
 			;
 
 			ScaleSummonedCreature._mutSimpleSpecialAcItem(it);
 
 			return it;
 		});
+	},
+
+	_scale_getConvertedPbString (state, str, {isBonus = false} = {}) {
+		let out = str
+			.replace(/\bplus\b/gi, "+")
+			.replace(/(\b|[-+])PB\b/g, `$1${state.proficiencyBonus}`)
+			// eslint-disable-next-line no-eval
+			.replace(/[-+]\s*\d+\s*[-+]\s*\d+\b/g, (...n) => eval(n[0]))
+		;
+
+		const reDice = /(\b(?:\d+)?d\d+\b)/g;
+		let ix = 0;
+		const outSimplified = out.split(reDice)
+			.map(pt => {
+				// Don't increase index for empty strings
+				if (!pt.trim()) return pt;
+
+				if (reDice.test(pt)) {
+					ix++;
+					return pt;
+				}
+
+				const simplified = Renderer.dice.parseRandomise2(pt);
+				if (simplified != null) {
+					if (ix) {
+						ix++;
+						return UiUtil.intToBonus(simplified);
+					}
+					ix++;
+					return simplified;
+				}
+
+				ix++;
+				return pt;
+			})
+			.join("")
+			.replace(/\s*[-+]\s*/g, (...m) => ` ${m[0].trim()} `);
+
+		if (!isNaN(outSimplified) && isBonus) return UiUtil.intToBonus(outSimplified);
+		return outSimplified;
+	},
+
+	_scale_savesSkills (mon, toClassLevel, state, prop) {
+		mon[prop] = Object.entries(mon[prop])
+			.mergeMap(([k, v]) => {
+				if (typeof v !== "string") return {[k]: v};
+				return {[k]: this._scale_getConvertedPbString(state, v, {isBonus: true})};
+			});
+	},
+
+	_scale_saves (mon, toClassLevel, state) {
+		if (!mon.save) return;
+		this._scale_savesSkills(mon, toClassLevel, state, "save");
+	},
+
+	_scale_skills (mon, toClassLevel, state) {
+		if (mon.passive != null) mon.passive = this._scale_getConvertedPbString(state, `${mon.passive}`);
+
+		if (!mon.skill) return;
+		this._scale_savesSkills(mon, toClassLevel, state, "skill");
 	},
 
 	_scale_hp (mon, toClassLevel, state) {
@@ -2406,24 +2526,26 @@
 
 		basePart = basePart
 			// "5 + five times your ranger level"
-			.replace(/(?<base>\d+)\s*\+\s*(?<perLevel>\d+|[a-z]+) times your (?<className>[^(]*) level/g, (...m) => {
+			.replace(/(?<base>\d+)\s*\+\s*(?<perLevel>\d+|[a-z]+) times your (?:(?<className>[^(]*) )?level/g, (...m) => {
 				const numTimes = isNaN(m.last().perLevel) ? Parser.textToNumber(m.last().perLevel) : Number(m.last().perLevel);
 				return `${Number(m.last().base) + (numTimes * toClassLevel)}`;
 			})
 			// "1 + <...> + your artificer level"
-			.replace(/(?<base>\d+)\s*\+\s*your (?<className>[^(]*) level/g, (...m) => {
+			.replace(/(?<base>\d+)\s*\+\s*your (?:(?<className>[^(]*) )?level/g, (...m) => {
 				return `${Number(m.last().base) + toClassLevel}`;
 			})
 			// "equal the beast's Constitution modifier + five times your ranger level"
-			.replace(/equal .*? Constitution modifier\s*\+\s*(?<perLevel>\d+|[a-z]+) times your (?<className>[^(]*) level/g, (...m) => {
+			.replace(/equal .*? Constitution modifier\s*\+\s*(?<perLevel>\d+|[a-z]+) times your (?:(?<className>[^(]*) )?level/g, (...m) => {
 				const numTimes = isNaN(m.last().perLevel) ? Parser.textToNumber(m.last().perLevel) : Number(m.last().perLevel);
 				return `${Parser.getAbilityModNumber(mon.con) + (numTimes * toClassLevel)}`;
 			})
 		;
 
+		basePart = this._scale_getConvertedPbString(state, basePart);
+
 		// "the beast has a number of Hit Dice [d8s] equal to your ranger level"
 		if (hdPart) {
-			hdPart = hdPart.replace(/(?<intro>.*) a number of hit dice \[d(?<hdSides>\d+)s?] equal to your (?<className>[^(]*) level/i, (...m) => {
+			hdPart = hdPart.replace(/(?<intro>.*) a number of hit dice \[d(?<hdSides>\d+)s?] equal to your (?:(?<className>[^(]*) )?level/i, (...m) => {
 				const hdFormula = `${toClassLevel}d${m.last().hdSides}`;
 				if (!yourAbilModPart) return hdFormula;
 
@@ -2453,13 +2575,13 @@
 							return `${m[0]} (${UiUtil.intToBonus(state.proficiencyBonus)})`;
 						})
 						// "{@damage 1d8 + 2 + PB}"
-						.replace(/{@(?:dice|damage|hit|d20) [^}]+}/g, (...m) => {
-							return m[0]
-								.replace(/\bPB\b/g, (...n) => state.proficiencyBonus)
-								// eslint-disable-next-line no-eval
-								.replace(/[-+]\s*\d+\s*[-+]\s*\d+\b/g, (...n) => UiUtil.intToBonus(eval(n[0])))
-								.replace(/\s*[-+]\s*/g, (...m) => ` ${m[0].trim()} `)
-							;
+						.replace(/{@(?<tag>dice|damage|hit|d20|dc) (?<text>[^}]+)}/g, (...m) => {
+							const {tag, text} = m.last();
+							const [ptNumber, ...ptsRest] = text.split("|");
+
+							const ptNumberOut = this._scale_getConvertedPbString(state, ptNumber);
+
+							return `{@${tag} ${[ptNumberOut, ...ptsRest].join("|")}}`;
 						})
 					;
 
@@ -2471,6 +2593,7 @@
 
 	_scale_traits (mon, toClassLevel, state) { this._scale_genericEntries(mon, toClassLevel, state, "trait"); },
 	_scale_actions (mon, toClassLevel, state) { this._scale_genericEntries(mon, toClassLevel, state, "action"); },
+	_scale_bonusActions (mon, toClassLevel, state) { this._scale_genericEntries(mon, toClassLevel, state, "bonus"); },
 	_scale_reactions (mon, toClassLevel, state) { this._scale_genericEntries(mon, toClassLevel, state, "reaction"); },
 
 	_scale_pbNote (mon, toClassLevel, state) {

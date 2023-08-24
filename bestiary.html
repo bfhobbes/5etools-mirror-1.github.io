@@ -8,7 +8,7 @@
 	<meta charset="utf-8">
 	<meta name="description" content="">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 
 	<title>Bestiary - 5etools</title>
@@ -79,10 +79,9 @@
 	<div class="cancer__wrp-leaderboard cancer__anchor"><div class="cancer__disp-cancer"></div><div class="cancer__wrp-leaderboard-inner"><!--5ETOOLS_AD_LEADERBOARD--></div></div>
 
 	<header class="hidden-xs hidden-sm page__header">
-		<div class="container">
-
-			<h1 class="page__title">Bestiary</h1>
-			<p class="page__subtitle" id="page__subtitle">Search by name on the left, click monster name to display on the right.</p>
+		<div class="container ve-flex-v-baseline">
+			<h1 class="page__title no-wrap my-0">Bestiary</h1>
+			<p class="page__subtitle no-wrap my-0" id="page__subtitle">Search by name on the left, click monster name to display on the right.</p>
 		</div>
 	</header>
 	<nav class="container page__nav" id="navigation">
@@ -118,7 +117,7 @@
 
 				<div class="ecgen__visible mb-4" id="ecgen__wrp-save-controls"></div>
 
-				<div id="sublistcontainer" class="sublist sublist--resizable">
+				<div id="sublistcontainer" class="sublist sublist--resizable no-print">
 					<div id="sublistsort" class="btn-group sublist__wrp-cols">
 						<button class="col-5 sort btn btn-default btn-xs" data-sort="name">Name</button>
 						<button class="col-3-8 sort btn btn-default btn-xs ecgen__hidden" data-sort="type">Type</button>
@@ -149,14 +148,14 @@
 					</table>
 				</div>
 
-				<div class="text-center mt-2 no-print ecgen__hidden">
+				<div class="ve-text-center mt-2 no-print ecgen__hidden">
 					<button class="btn btn-success btn-xs" id="btn-encounterbuild">Encounter Builder</button>
 					<div id="wrp-profbonusdice">
 						<button class="btn btn-default btn-xs" id="profbonusdice"
 								title="See the Dungeon Master&apos;s Guide, p263.">Use Proficiency Dice
 						</button>
 					</div>
-					<button class="btn btn-default btn-xs" id="btn-printbook">Printer View</button>
+					<button class="btn btn-default btn-xs" id="btn-book">Printer View</button>
 					<button class="btn btn-default btn-xs" id="btn-show-table" title="View and Download Creatures in Tabular Format">Table View</button>
 					<button class="btn btn-xs btn-info" id="manage-brew">Manage Homebrew</button>
 				</div>
@@ -178,6 +177,7 @@
 <script type="text/javascript" src="js/omnidexer.js"></script>
 <script type="text/javascript" src="js/omnisearch.js"></script>
 <script type="text/javascript" src="js/filter.js"></script>
+<script type="text/javascript" src="js/utils-dataloader.js"></script>
 <script type="text/javascript" src="js/utils-brew.js"></script>
 <script type="text/javascript" src="js/render.js"></script>
 <script type="text/javascript" src="js/render-dice.js"></script>

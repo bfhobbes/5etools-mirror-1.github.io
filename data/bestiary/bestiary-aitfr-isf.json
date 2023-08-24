@@ -105,6 +105,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"handaxe|phb"
+			],
 			"senseTags": [
 				"SD"
 			],
@@ -127,6 +130,10 @@
 			],
 			"conditionInflictSpell": [
 				"invisible"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -258,6 +265,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"languageTags": [
 				"C",
 				"DR",
@@ -287,6 +297,10 @@
 			],
 			"conditionInflictSpell": [
 				"restrained"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true

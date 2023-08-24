@@ -20,6 +20,12 @@
 			"name": "Animated Tile Chimera",
 			"source": "RoT",
 			"page": 42,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 128
+				}
+			],
 			"_copy": {
 				"name": "Chimera",
 				"source": "MM",
@@ -69,6 +75,10 @@
 			"page": 36,
 			"otherSources": [
 				{
+					"source": "ToD",
+					"page": 112
+				},
+				{
 					"source": "PotA",
 					"page": 88
 				}
@@ -106,6 +116,12 @@
 			"name": "Carnivorous Flower",
 			"source": "RoT",
 			"page": 67,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 153
+				}
+			],
 			"_copy": {
 				"name": "Otyugh",
 				"source": "MM",
@@ -129,6 +145,12 @@
 			"isNamedCreature": true,
 			"source": "RoT",
 			"page": 40,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 131
+				}
+			],
 			"_copy": {
 				"name": "Mummy Lord",
 				"source": "MM",
@@ -141,6 +163,67 @@
 					}
 				}
 			},
+			"int": 18,
+			"spellcasting": [
+				{
+					"name": "Spellcasting",
+					"headerEntries": [
+						"Diderius is a 10th-level spellcaster. His spellcasting ability is Intelligence (spell save {@dc 17}, {@hit 9} to hit with spell attacks). He has the following wizard spells prepared:"
+					],
+					"spells": {
+						"0": {
+							"spells": [
+								"{@spell minor illusion}",
+								"{@spell ray of frost}"
+							]
+						},
+						"1": {
+							"slots": 4,
+							"spells": [
+								"{@spell charm person}",
+								"{@spell detect magic}",
+								"{@spell shield}",
+								"{@spell thunderwave}"
+							]
+						},
+						"2": {
+							"slots": 3,
+							"spells": [
+								"{@spell cloud of daggers}",
+								"{@spell hold person}",
+								"{@spell see invisibility}"
+							]
+						},
+						"3": {
+							"slots": 3,
+							"spells": [
+								"{@spell animate dead}",
+								"{@spell dispel magic}"
+							]
+						},
+						"4": {
+							"slots": 3,
+							"spells": [
+								"{@spell fire shield}",
+								"{@spell greater invisibility}"
+							]
+						},
+						"5": {
+							"slots": 2,
+							"spells": [
+								"{@spell cloudkill}",
+								"{@spell wall of stone}"
+							]
+						}
+					},
+					"ability": "int"
+				}
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
+			],
 			"hasToken": true
 		},
 		{
@@ -258,6 +341,9 @@
 						"{@atk rs} {@hit 5} to hit, range 50 ft., one target. {@h}22 ({@dice 5d8}) damage of the type to which the dragonfang has damage resistance."
 					]
 				}
+			],
+			"attachedItems": [
+				"shortsword|phb"
 			],
 			"traitTags": [
 				"Pack Tactics"
@@ -395,10 +481,14 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Pack Tactics"
 			],
 			"actionTags": [
+				"Breath Weapon",
 				"Multiattack"
 			],
 			"languageTags": [
@@ -417,8 +507,15 @@
 		{
 			"name": "Galvan",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "RoT",
 			"page": 9,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 12
+				}
+			],
 			"_copy": {
 				"name": "Dragonsoul",
 				"source": "RoT",
@@ -501,6 +598,10 @@
 			"otherSources": [
 				{
 					"source": "DC"
+				},
+				{
+					"source": "ToD",
+					"page": 141
 				}
 			],
 			"_copy": {
@@ -549,6 +650,12 @@
 			"name": "Half-Green Dragon Assassin",
 			"source": "RoT",
 			"page": 56,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 142
+				}
+			],
 			"_copy": {
 				"name": "Assassin",
 				"source": "MM",
@@ -589,6 +696,12 @@
 			"name": "Half-Red Dragon Gladiator",
 			"source": "RoT",
 			"page": 56,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 142
+				}
+			],
 			"_copy": {
 				"name": "Gladiator",
 				"source": "MM",
@@ -737,6 +850,12 @@
 			"name": "Ice Troll",
 			"source": "RoT",
 			"page": 30,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 121
+				}
+			],
 			"_copy": {
 				"name": "Troll",
 				"source": "MM"
@@ -749,8 +868,15 @@
 		{
 			"name": "Iskander",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "RoT",
 			"page": 62,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 148
+				}
+			],
 			"_copy": {
 				"name": "Mage",
 				"source": "MM",
@@ -760,7 +886,7 @@
 						"items": {
 							"name": "5etools Note",
 							"entries": [
-								"Iskander is presented in {@adventure The Rise of Tiamat|RoT} as a neutral evil male human wizard. The {@creature mage} statblock has been provided here for ease of use."
+								"Iskander is presented in {@adventure The Rise of Tiamat|RoT} as a neutral evil male human wizard. The {@creature mage} stat block has been provided here for ease of use."
 							]
 						}
 					}
@@ -781,8 +907,15 @@
 		{
 			"name": "Maccath the Crimson",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "RoT",
 			"page": 33,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 111
+				}
+			],
 			"_copy": {
 				"name": "Mage",
 				"source": "MM",
@@ -796,7 +929,7 @@
 						"items": {
 							"name": "5etools Note",
 							"entries": [
-								"Maccath the Crimson is presented in {@adventure The Rise of Tiamat|RoT} as a female tiefling sorcerer and member of the Arcane Brotherhood. The {@creature mage} statblock, modified with tiefling racial traits, has been provided here for ease of use."
+								"Maccath the Crimson is presented in {@adventure The Rise of Tiamat|RoT} as a female tiefling sorcerer and member of the Arcane Brotherhood. The {@creature mage} stat block, modified with tiefling racial traits, has been provided here for ease of use."
 							]
 						}
 					}
@@ -818,8 +951,15 @@
 		{
 			"name": "Marfulb",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "RoT",
 			"page": 35,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 121
+				}
+			],
 			"_copy": {
 				"name": "Ice Toad",
 				"source": "RoT"
@@ -830,8 +970,15 @@
 		{
 			"name": "Mend-nets",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "RoT",
 			"page": 32,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 116
+				}
+			],
 			"_copy": {
 				"name": "Tribal Warrior",
 				"source": "MM"
@@ -847,6 +994,7 @@
 		{
 			"name": "Naergoth Bladelord",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "RoT",
 			"page": 90,
 			"otherSources": [
@@ -954,6 +1102,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"longbow|phb",
+				"longsword|phb"
+			],
 			"traitTags": [
 				"Sunlight Sensitivity"
 			],
@@ -978,12 +1130,16 @@
 				"RNG",
 				"RW"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Neronvain",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "RoT",
 			"page": 91,
 			"otherSources": [
@@ -1088,6 +1244,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"shortsword|phb"
+			],
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -1115,6 +1274,9 @@
 			"conditionInflict": [
 				"poisoned"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
@@ -1122,6 +1284,12 @@
 			"name": "Paper Whirlwind",
 			"source": "RoT",
 			"page": 72,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 158
+				}
+			],
 			"_copy": {
 				"name": "Swarm of Ravens",
 				"source": "MM"
@@ -1139,6 +1307,12 @@
 			"name": "Red Wizard",
 			"source": "RoT",
 			"page": 76,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 171
+				}
+			],
 			"_copy": {
 				"name": "Mage",
 				"source": "MM"
@@ -1330,6 +1504,10 @@
 			"conditionInflict": [
 				"restrained"
 			],
+			"savingThrowForced": [
+				"dexterity",
+				"strength"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
@@ -1337,6 +1515,12 @@
 			"name": "Sled Dog",
 			"source": "RoT",
 			"page": 27,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 113
+				}
+			],
 			"_copy": {
 				"name": "Wolf",
 				"source": "MM",
@@ -1354,6 +1538,12 @@
 			"name": "Snake Horror",
 			"source": "RoT",
 			"page": 46,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 132
+				}
+			],
 			"_copy": {
 				"name": "Helmed Horror",
 				"source": "MM",
@@ -1393,7 +1583,7 @@
 				},
 				{
 					"source": "ToD",
-					"page": 180
+					"page": 190
 				}
 			],
 			"size": [
@@ -1635,14 +1825,29 @@
 				"deafened",
 				"stunned"
 			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity",
+				"wisdom"
+			],
+			"savingThrowForcedSpell": [
+				"charisma"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Varram",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "RoT",
 			"page": 9,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 8
+				}
+			],
 			"_copy": {
 				"name": "Dragonsoul",
 				"source": "RoT",
@@ -1662,7 +1867,7 @@
 						"items": {
 							"name": "5etools Note",
 							"entries": [
-								"Varram is presented in {@adventure The Rise of Tiamat|RoT} as a male dwarf. The {@creature dragonsoul|RoT} statblock, modified with dwarf racial traits, has been provided here for ease of use."
+								"Varram is presented in {@adventure The Rise of Tiamat|RoT} as a male dwarf. The {@creature dragonsoul|RoT} stat block, modified with dwarf racial traits, has been provided here for ease of use."
 							]
 						}
 					}

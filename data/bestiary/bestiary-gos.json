@@ -98,12 +98,16 @@
 			"miscTags": [
 				"MW"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
 			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Barnacle Bess",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "GoS",
 			"page": 220,
 			"_copy": {
@@ -235,6 +239,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"spear|phb"
+			],
 			"traitTags": [
 				"Amphibious"
 			],
@@ -249,6 +256,9 @@
 				"MW",
 				"RW",
 				"THW"
+			],
+			"savingThrowForced": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -398,6 +408,9 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"savingThrowForced": [
+				"strength"
+			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -445,7 +458,8 @@
 				"CC",
 				"I"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Drowned Ascetic",
@@ -558,6 +572,9 @@
 			"miscTags": [
 				"MW"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -668,6 +685,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb",
+				"hand crossbow|phb"
+			],
 			"traitTags": [
 				"Undead Fortitude"
 			],
@@ -692,6 +713,10 @@
 			],
 			"conditionInflict": [
 				"frightened"
+			],
+			"savingThrowForced": [
+				"constitution",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -802,6 +827,9 @@
 			"miscTags": [
 				"MW"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -911,6 +939,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"greatsword|phb"
+			],
 			"traitTags": [
 				"Undead Fortitude"
 			],
@@ -936,6 +967,9 @@
 			],
 			"conditionInflict": [
 				"blinded"
+			],
+			"savingThrowForced": [
+				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true,
@@ -1021,6 +1055,9 @@
 			],
 			"conditionInflict": [
 				"stunned"
+			],
+			"savingThrowForced": [
+				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -1265,6 +1302,9 @@
 				"charmed",
 				"incapacitated"
 			],
+			"savingThrowForced": [
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -1448,6 +1488,10 @@
 				"prone",
 				"restrained"
 			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -1528,6 +1572,9 @@
 						"{@atk mw,rw} {@hit 3} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}4 ({@damage 1d6 + 1}) piercing damage, or 5 ({@damage 1d8 + 1}) piercing damage if used with two hands to make a melee attack."
 					]
 				}
+			],
+			"attachedItems": [
+				"trident|phb"
 			],
 			"traitTags": [
 				"Amphibious"
@@ -1649,6 +1696,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"trident|phb"
+			],
 			"traitTags": [
 				"Amphibious"
 			],
@@ -1681,6 +1731,7 @@
 		{
 			"name": "Krell Grohlg",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "GoS",
 			"page": 92,
 			"_copy": {
@@ -1719,6 +1770,17 @@
 				"Common",
 				"Orc"
 			],
+			"action": [
+				{
+					"name": "Quarterstaff",
+					"entries": [
+						"{@atk mw} {@hit 6} to hit ({@hit 4} to hit with shillelagh), reach 5 ft., one target. {@h}7 ({@damage 1d6 + 4}) bludgeoning damage, 8 ({@damage 1d8 + 4}) bludgeoning damage if wielded with two hands, or 6 ({@damage 1d8 + 2}) bludgeoning damage with {@spell shillelagh}."
+					]
+				}
+			],
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -1726,11 +1788,13 @@
 				"C",
 				"O"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Kysh",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "GoS",
 			"page": 240,
 			"size": [
@@ -1817,6 +1881,9 @@
 						"{@atk mw,rw} {@hit 4} to hit, reach 5 ft. or range 20/60 ft, one target. {@h}5 ({@damage 1d6 + 2}) piercing damage, or 6 ({@damage 1d8 + 2}) piercing damage if used with two hands to make a melee attack."
 					]
 				}
+			],
+			"attachedItems": [
+				"spear|phb"
 			],
 			"traitTags": [
 				"Amphibious"
@@ -1955,6 +2022,9 @@
 			],
 			"conditionInflict": [
 				"prone"
+			],
+			"savingThrowForced": [
+				"dexterity"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -2154,8 +2224,12 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"savingThrowForced": [
+				"strength"
+			],
 			"hasToken": true,
-			"hasFluff": true
+			"hasFluff": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Lizardfolk Scaleshield",
@@ -2247,6 +2321,9 @@
 						"If an ally within 5 feet of the scaleshield is hit by an attack, the scaleshield can reduce that attack's damage by half."
 					]
 				}
+			],
+			"attachedItems": [
+				"morningstar|phb"
 			],
 			"traitTags": [
 				"Hold Breath"
@@ -2413,6 +2490,13 @@
 				"paralyzed",
 				"prone"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -2499,6 +2583,9 @@
 						"{@atk mw,rw} {@hit 3} to hit, reach 5 ft. or range 20/60 ft., one target. {@h}4 ({@damage 1d6 + 1}) piercing damage, or 5 ({@damage 1d8 + 1}) piercing damage if used with two hands."
 					]
 				}
+			],
+			"attachedItems": [
+				"spear|phb"
 			],
 			"actionTags": [
 				"Multiattack"
@@ -2605,6 +2692,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"club|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -2623,6 +2713,9 @@
 			"conditionInflict": [
 				"poisoned"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -2630,6 +2723,7 @@
 		{
 			"name": "Master Refrum",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "GoS",
 			"page": 165,
 			"_copy": {
@@ -2654,11 +2748,13 @@
 				"L",
 				"G"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Maw of Sekolah",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "GoS",
 			"page": 244,
 			"size": [
@@ -2785,6 +2881,9 @@
 				"MW",
 				"RCH"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -2877,6 +2976,9 @@
 			],
 			"conditionInflict": [
 				"paralyzed"
+			],
+			"savingThrowForced": [
+				"constitution"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -3013,6 +3115,9 @@
 						"In response to a creature hitting the statue with a melee weapon attack, the statue deals 11 ({@damage 2d10}) piercing damage to the attacker."
 					]
 				}
+			],
+			"attachedItems": [
+				"greataxe|phb"
 			],
 			"traitTags": [
 				"Immutable Form"
@@ -3175,6 +3280,9 @@
 			"miscTags": [
 				"MW"
 			],
+			"savingThrowForced": [
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -3182,6 +3290,7 @@
 		{
 			"name": "Mr. Dory",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "GoS",
 			"page": 246,
 			"size": [
@@ -3296,6 +3405,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"rapier|phb"
+			],
 			"traitTags": [
 				"Magic Resistance"
 			],
@@ -3328,6 +3440,14 @@
 			"miscTags": [
 				"MW"
 			],
+			"savingThrowForced": [
+				"constitution"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -3335,6 +3455,7 @@
 		{
 			"name": "Oceanus",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "GoS",
 			"page": 246,
 			"size": [
@@ -3416,6 +3537,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"light crossbow|phb",
+				"trident|phb"
+			],
 			"traitTags": [
 				"Amphibious"
 			],
@@ -3441,6 +3566,7 @@
 		{
 			"name": "Othokent",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "GoS",
 			"page": 81,
 			"_copy": {
@@ -3544,6 +3670,9 @@
 						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}7 ({@damage 1d8 + 3}) piercing damage, and the target is {@condition grappled} (escape {@dc 13})."
 					]
 				}
+			],
+			"attachedItems": [
+				"light hammer|phb"
 			],
 			"languageTags": [
 				"C",
@@ -3651,6 +3780,10 @@
 						"Whenever a friendly creature within 30 feet of the captain that can hear it misses with an attack, the captain can yell perilous threats to allow that creature to reroll the attack roll."
 					]
 				}
+			],
+			"attachedItems": [
+				"hand crossbow|phb",
+				"longsword|phb"
 			],
 			"actionTags": [
 				"Multiattack"
@@ -3769,6 +3902,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
 			"languageTags": [
 				"C",
 				"X"
@@ -3786,6 +3922,9 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -3858,6 +3997,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"longsword|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -3870,6 +4012,9 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForced": [
+				"strength"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -3972,6 +4117,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
 			"languageTags": [
 				"AQ",
 				"C"
@@ -3989,6 +4137,11 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -4218,6 +4371,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"spear|phb"
+			],
 			"senseTags": [
 				"SD"
 			],
@@ -4340,6 +4496,9 @@
 						"{@atk mw} {@hit 5} to hit, reach 5 ft., one target. {@h}5 ({@damage 1d4 + 3}) slashing damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"warhammer|phb"
 			],
 			"traitTags": [
 				"Siege Monster"
@@ -4488,6 +4647,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"glaive|phb"
+			],
 			"senseTags": [
 				"SD"
 			],
@@ -4508,6 +4670,9 @@
 			],
 			"conditionInflict": [
 				"charmed"
+			],
+			"savingThrowForced": [
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluff": true
@@ -4797,6 +4962,10 @@
 			"miscTags": [
 				"MW"
 			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -4941,12 +5110,16 @@
 			"miscTags": [
 				"MW"
 			],
+			"savingThrowForced": [
+				"strength"
+			],
 			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Sanbalet",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "GoS",
 			"page": 252,
 			"size": [
@@ -5028,6 +5201,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"languageTags": [
 				"C"
 			],
@@ -5047,12 +5223,16 @@
 				"RW",
 				"THW"
 			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluff": true
 		},
 		{
 			"name": "Sauriv",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "GoS",
 			"page": 79,
 			"_copy": {
@@ -5101,7 +5281,8 @@
 				"C",
 				"DR"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Shell Shark",
@@ -5403,6 +5584,9 @@
 				"MW",
 				"RCH"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluff": true
 		},
@@ -5606,6 +5790,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"trident|phb"
+			],
 			"traitTags": [
 				"Amphibious"
 			],
@@ -5751,6 +5938,9 @@
 			"conditionInflict": [
 				"prone"
 			],
+			"savingThrowForced": [
+				"strength"
+			],
 			"hasToken": true,
 			"hasFluff": true,
 			"hasFluffImages": true
@@ -5891,6 +6081,7 @@
 		{
 			"name": "Yalaga Maladwyn",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "GoS",
 			"page": 226,
 			"_copy": {

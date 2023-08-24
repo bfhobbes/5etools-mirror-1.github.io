@@ -84,6 +84,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
 			"languageTags": [
 				"C",
 				"X"
@@ -104,6 +107,12 @@
 			],
 			"conditionInflictSpell": [
 				"prone"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity"
 			],
 			"hasToken": true
 		},
@@ -184,6 +193,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"mace|phb"
+			],
 			"languageTags": [
 				"C",
 				"X"
@@ -200,6 +212,12 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForced": [
+				"dexterity"
+			],
+			"savingThrowForcedSpell": [
+				"dexterity"
 			],
 			"hasToken": true
 		},
@@ -259,6 +277,9 @@
 						"You take the Disengage action."
 					]
 				}
+			],
+			"attachedItems": [
+				"dagger|phb"
 			],
 			"languageTags": [
 				"C",
@@ -329,6 +350,9 @@
 						"While wielding a shield, you try to shove one creature within 5 feet of you."
 					]
 				}
+			],
+			"attachedItems": [
+				"longsword|phb"
 			],
 			"languageTags": [
 				"C",

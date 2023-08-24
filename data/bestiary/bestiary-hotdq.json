@@ -110,6 +110,7 @@
 		{
 			"name": "Azbara Jos",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 88,
 			"otherSources": [
@@ -243,6 +244,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb"
+			],
 			"languageTags": [
 				"C",
 				"DR",
@@ -268,12 +272,17 @@
 				"RW",
 				"THW"
 			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Blagothkus",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 89,
 			"otherSources": [
@@ -410,6 +419,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"morningstar|phb"
+			],
 			"traitTags": [
 				"Keen Senses"
 			],
@@ -437,12 +449,18 @@
 				"MW",
 				"RCH"
 			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"dexterity",
+				"strength"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Captain Othelstan",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 89,
 			"otherSources": [
@@ -536,6 +554,10 @@
 						"{@atk mw,rw} {@hit 7} to hit, reach 5 ft. or ranged 20/60 ft., one target. {@h}7 ({@damage 1d6 + 4}) piercing damage."
 					]
 				}
+			],
+			"attachedItems": [
+				"flail|phb",
+				"spear|phb"
 			],
 			"actionTags": [
 				"Multiattack"
@@ -652,6 +674,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"scimitar|phb"
+			],
 			"traitTags": [
 				"Pack Tactics"
 			],
@@ -668,7 +693,8 @@
 			"miscTags": [
 				"MW"
 			],
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Dragonwing",
@@ -783,6 +809,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"scimitar|phb"
+			],
 			"traitTags": [
 				"Pack Tactics"
 			],
@@ -804,6 +833,7 @@
 		{
 			"name": "Dralmorrer Borngray",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 90,
 			"otherSources": [
@@ -818,7 +848,10 @@
 			"type": {
 				"type": "humanoid",
 				"tags": [
-					"high elf"
+					{
+						"tag": "elf",
+						"prefix": "High"
+					}
 				]
 			},
 			"alignment": [
@@ -945,6 +978,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"dagger|phb",
+				"longsword|phb"
+			],
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -980,6 +1017,9 @@
 				"RW",
 				"THW"
 			],
+			"savingThrowForcedSpell": [
+				"constitution"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
@@ -987,6 +1027,12 @@
 			"name": "Four-Armed Troll",
 			"source": "HotDQ",
 			"page": 65,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 81
+				}
+			],
 			"_copy": {
 				"name": "Troll",
 				"source": "MM",
@@ -1011,6 +1057,7 @@
 		{
 			"name": "Frulam Mondath",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 90,
 			"otherSources": [
@@ -1125,6 +1172,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"halberd|phb"
+			],
 			"actionTags": [
 				"Multiattack"
 			],
@@ -1148,6 +1198,11 @@
 				"MW",
 				"RCH"
 			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"dexterity",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
@@ -1155,6 +1210,12 @@
 			"name": "Golden Stag",
 			"source": "HotDQ",
 			"page": 35,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 51
+				}
+			],
 			"_copy": {
 				"name": "Elk",
 				"source": "MM"
@@ -1266,6 +1327,7 @@
 		{
 			"name": "Jamna Gleamsilver",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 91,
 			"otherSources": [
@@ -1386,6 +1448,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"shortsword|phb"
+			],
 			"senseTags": [
 				"D"
 			],
@@ -1410,12 +1475,16 @@
 			"miscTags": [
 				"MW"
 			],
+			"savingThrowForcedSpell": [
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Langdedrosa Cyanwrath",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 91,
 			"otherSources": [
@@ -1520,6 +1589,10 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"greatsword|phb",
+				"spear|phb"
+			],
 			"senseTags": [
 				"B",
 				"D"
@@ -1543,14 +1616,24 @@
 				"RW",
 				"THW"
 			],
+			"savingThrowForced": [
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Leosin Erlanthar",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 87,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 34
+				}
+			],
 			"_copy": {
 				"name": "Martial Arts Adept",
 				"source": "VGM",
@@ -1560,19 +1643,27 @@
 						"items": {
 							"name": "5etools Note",
 							"entries": [
-								"Leosin Erlanthar is presented in {@adventure Hoard of the Dragon Queen|HotDQ} as a half-elf monk. The {@creature martial arts adept|vgm} statblock from {@book Volo's Guide to Monsters|VGM} has been provided here for ease of use."
+								"Leosin Erlanthar is presented in {@adventure Hoard of the Dragon Queen|HotDQ} as a half-elf monk. The {@creature martial arts adept|vgm} stat block from {@book Volo's Guide to Monsters|VGM} has been provided here for ease of use."
 							]
 						}
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Linan Swift",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 8,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 24
+				}
+			],
 			"_copy": {
 				"name": "Commoner",
 				"source": "MM"
@@ -1595,6 +1686,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"spear|phb"
+			],
 			"damageTags": [
 				"P"
 			],
@@ -1608,8 +1702,15 @@
 		{
 			"name": "Ontharr Frume",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 28,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 15
+				}
+			],
 			"_copy": {
 				"name": "War Priest",
 				"source": "VGM",
@@ -1619,7 +1720,7 @@
 						"items": {
 							"name": "5etools Note",
 							"entries": [
-								"Ontharr Frume is presented in {@adventure Hoard of the Dragon Queen|HotDQ} and The {@adventure Rise of Tiamat|RoT} as a lawful good, human paladin of Torm. The {@creature war priest|vgm} statblock from {@book Volo's Guide to Monsters|VGM} has been provided here for ease of use."
+								"Ontharr Frume is presented in {@adventure Hoard of the Dragon Queen|HotDQ} and The {@adventure Rise of Tiamat|RoT} as a lawful good, human paladin of Torm. The {@creature war priest|vgm} stat block from {@book Volo's Guide to Monsters|VGM} has been provided here for ease of use."
 							]
 						}
 					}
@@ -1631,11 +1732,13 @@
 					"human"
 				]
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Pharblex Spattergoo",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 91,
 			"otherSources": [
@@ -1783,6 +1886,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"spear|phb"
+			],
 			"traitTags": [
 				"Amphibious"
 			],
@@ -1810,14 +1916,25 @@
 				"RW",
 				"THW"
 			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"strength"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Raggnar Redtooth",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 74,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 90
+				}
+			],
 			"_copy": {
 				"name": "Veteran",
 				"source": "MM",
@@ -1838,6 +1955,7 @@
 		{
 			"name": "Rath Modar",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 92,
 			"otherSources": [
@@ -1991,6 +2109,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"quarterstaff|phb"
+			],
 			"languageTags": [
 				"C",
 				"DR",
@@ -2016,6 +2137,12 @@
 			],
 			"miscTags": [
 				"MW"
+			],
+			"savingThrowForcedSpell": [
+				"charisma",
+				"dexterity",
+				"intelligence",
+				"wisdom"
 			],
 			"hasToken": true,
 			"hasFluffImages": true
@@ -2163,7 +2290,7 @@
 				{
 					"name": "Darkness (Costs 2 Actions)",
 					"entries": [
-						"A 15-foot radius of magical darkness extends from a point Rezmir can see within 60 feet of her and spreads around corners. The darkness lasts as long as Rezmir maintains concentration, up to 1 minute. A creature with darkvision can't see through this darkness, and no natural light can illuminate it. If any of the area overlaps with a area of light created by a spell of 2nd level or lower, the spell creating the light is dispelled."
+						"A 15-foot radius of magical darkness extends from a point Rezmir can see within 60 feet of her and spreads around corners. The darkness lasts as long as Rezmir maintains {@status concentration}, up to 1 minute. A creature with darkvision can't see through this darkness, and no natural light can illuminate it. If any of the area overlaps with a area of light created by a spell of 2nd level or lower, the spell creating the light is dispelled."
 					]
 				},
 				{
@@ -2178,6 +2305,9 @@
 						"Rezmir takes the Hide action."
 					]
 				}
+			],
+			"attachedItems": [
+				"greatsword|phb"
 			],
 			"traitTags": [
 				"Amphibious",
@@ -2206,14 +2336,25 @@
 				"AOE",
 				"MW"
 			],
+			"savingThrowForced": [
+				"constitution",
+				"dexterity"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Sandesyl Morgia",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 81,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 98
+				}
+			],
 			"_copy": {
 				"name": "Vampire",
 				"source": "MM",
@@ -2226,11 +2367,13 @@
 					}
 				}
 			},
-			"hasToken": true
+			"hasToken": true,
+			"hasFluffImages": true
 		},
 		{
 			"name": "Talis the White",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 93,
 			"otherSources": [
@@ -2379,6 +2522,9 @@
 					]
 				}
 			],
+			"attachedItems": [
+				"spear|phb"
+			],
 			"traitTags": [
 				"Fey Ancestry"
 			],
@@ -2413,14 +2559,25 @@
 				"deafened",
 				"prone"
 			],
+			"savingThrowForcedSpell": [
+				"constitution",
+				"wisdom"
+			],
 			"hasToken": true,
 			"hasFluffImages": true
 		},
 		{
 			"name": "Trepsin",
 			"isNpc": true,
+			"isNamedCreature": true,
 			"source": "HotDQ",
 			"page": 63,
+			"otherSources": [
+				{
+					"source": "ToD",
+					"page": 79
+				}
+			],
 			"size": [
 				"L"
 			],
